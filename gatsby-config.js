@@ -1,9 +1,8 @@
-/**
- * @type {import('gatsby').GatsbyConfig}
- */
 module.exports = {
   siteMetadata: {
-    title: `Portfolio Kais Boulakhlas`,
+    title: `Boulakhlas Kaïs`,
+    description: `Développeur web qui apprend tout les jours`,
+    author: `@kaisboulakhlas`,
     siteUrl: `https://www.yourdomain.tld`
   },
   plugins: ["gatsby-plugin-netlify-cms", "gatsby-plugin-sass", {
@@ -14,13 +13,13 @@ module.exports = {
   }, "gatsby-plugin-image", "gatsby-plugin-sitemap", {
     resolve: 'gatsby-plugin-manifest',
     options: {
-      "icon": "src/images/icon.png"
+      "icon": "src/assets/images/icon.png"
     }
   }, "gatsby-transformer-remark", "gatsby-plugin-sharp", "gatsby-transformer-sharp", {
     resolve: 'gatsby-source-filesystem',
     options: {
       "name": "images",
-      "path": "./src/images/"
+      "path": "./src/assets/images/"
     },
     __key: "images"
   }, {
@@ -30,5 +29,5 @@ module.exports = {
       "path": "./src/pages/"
     },
     __key: "pages"
-  }]
+  }, 'gatsby-plugin-offline'],
 };
