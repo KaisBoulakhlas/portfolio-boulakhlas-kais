@@ -29,5 +29,5 @@ module.exports = {
       "path": "./src/pages/"
     },
     __key: "pages"
-  }, 'gatsby-plugin-offline'],
+  }, 'gatsby-plugin-offline', `gatsby-plugin-netlify`],
 };
