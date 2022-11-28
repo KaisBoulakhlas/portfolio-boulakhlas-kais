@@ -48,5 +48,6 @@ module.exports = {
       __key: "pages"
     }, 
     'gatsby-plugin-offline', 
+    'gatsby-plugin-netlify'
 ],
 };
