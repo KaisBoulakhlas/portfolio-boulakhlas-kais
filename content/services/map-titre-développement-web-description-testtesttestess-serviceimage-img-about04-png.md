@@ -1,5 +1,5 @@
 ---
 titre: Développement web
 description: testtesttestess
-serviceimage: img/about04.png
+serviceimage: ../../static/img/about04.png
 ---

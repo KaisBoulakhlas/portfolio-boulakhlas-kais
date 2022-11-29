@@ -1,5 +1,5 @@
 ---
 titre: Développement mobile
 description: ksqldfskldkkl
-serviceimage: img/about03.png
+serviceimage: ../../static/img/about04.png
 ---

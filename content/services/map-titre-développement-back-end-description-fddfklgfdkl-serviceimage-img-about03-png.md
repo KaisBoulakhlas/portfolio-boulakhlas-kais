@@ -1,5 +1,5 @@
 ---
 titre: Développement back-end
 description: fddfklgfdkl
-serviceimage: img/about03.png
+serviceimage: ../../static/img/about04.png
 ---
