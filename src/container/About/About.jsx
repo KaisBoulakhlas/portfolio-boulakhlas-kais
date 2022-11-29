@@ -3,8 +3,11 @@ import { images } from '../../constants'
 import { motion } from 'framer-motion';
 import './about.scss'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import { useServicesData } from '../../hooks/use-service';
 
 const About = () => {
+  const servicesData = useServicesData();
+
   const abouts = [
     { title: 'Développement web', description: 'elkklkflkflf',imgUrl: images.about01 },
     { title: 'Développement front-end', description: 'elkklkflkflf',imgUrl:images.about02},
@@ -21,17 +24,17 @@ const About = () => {
       </h2>
 
       <div className="app__profiles">
-        {abouts.map((about, index) => (
+        {servicesData.map((service, index) => (
           <motion.div
             whileInView={{ opacity: 1 }}
             whileHover={{ scale: 1.1 }}
             transition={{ duration: 0.5, type: 'tween' }}
             className="app__profile-item"
-            key={about.title + index}
+            key={service.frontmatter.titre + index}
           >
-            <img src={about.imgUrl} alt={about.title} />
-            <h2 className="bold-text" style={{ marginTop: 20 }}>{about.title}</h2>
-            <p className="p-text" style={{ marginTop: 10 }}>{about.description}</p>
+            <GatsbyImage image={getImage(service.frontmatter.serviceimage)} alt={service.frontmatter.titre} />
+            <h2 className="bold-text" style={{ marginTop: 20 }}>{service.frontmatter.titre}</h2>
+            <p className="p-text" style={{ marginTop: 10 }}>{service.frontmatter.description}</p>
           </motion.div>
         ))}
       </div>
