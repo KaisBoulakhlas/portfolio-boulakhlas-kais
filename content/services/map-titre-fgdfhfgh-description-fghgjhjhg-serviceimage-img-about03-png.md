@@ -1,5 +1,5 @@
 ---
 titre: fgdfhfgh
 description: fghgjhjhg
-serviceimage: /img/about03.png
+serviceimage: about03.png
 ---

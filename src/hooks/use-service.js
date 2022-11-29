@@ -6,7 +6,7 @@ export const useServicesData = () => {
       nodes {
         frontmatter {
           description
-          featureImage
+          serviceimage
           titre
         }
       }

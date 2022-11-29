@@ -8,13 +8,37 @@ module.exports = {
   plugins: [
     "gatsby-plugin-netlify-cms", 
     "gatsby-plugin-sass", 
+    "gatsby-plugin-image", 
+    "gatsby-plugin-sharp", 
+    "gatsby-transformer-sharp", 
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        "name": "images",
+        "path": `${__dirname}/src/assets/images/`
+      },
+      __key: "images"
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: "img",
+        path: `${__dirname}/static/img`,
+      },
+    }, 
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: "services",
+        path: `${__dirname}/content/services`,
+      },
+    }, 
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
         "trackingId": "1999"
       }
     }, 
-    "gatsby-plugin-image", 
     "gatsby-plugin-sitemap", 
     {
       resolve: 'gatsby-plugin-manifest',
@@ -23,30 +47,7 @@ module.exports = {
       }
     }, 
     "gatsby-transformer-remark", 
-    "gatsby-plugin-sharp", 
-    "gatsby-transformer-sharp", 
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        "name": "images",
-        "path": "./src/assets/images/"
-      },
-      __key: "images"
-    }, {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: "markdown",
-        path: "./content/services",
-      },
-    }, 
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        "name": "pages",
-        "path": "./src/pages/"
-      },
-      __key: "pages"
-    }, 
+    `gatsby-plugin-mdx`,
     'gatsby-plugin-offline', 
     'gatsby-plugin-netlify'
 ],
