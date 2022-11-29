@@ -19,4 +19,4 @@ collections:
     fields:
       - { label: "Titre", name: "titre", widget: "string" }
       - { label: "Description", name: "description", widget: "text" }
-      - { label: "featureImage", name: "serviceimage", widget: image }
+      - { label: "serviceImage", name: "serviceimage", widget: image }
