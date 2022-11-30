@@ -1,6 +1,7 @@
 import React from 'react'
 import { images } from '../../constants'
 import { motion } from 'framer-motion';
+import { AppWrap } from '../../wrapper';
 import './about.scss'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import { useServicesData } from '../../hooks/use-service';
@@ -23,7 +24,7 @@ const About = () => {
         Pour Votre <span>Projet Informatique</span>
       </h2>
 
-      <div className="app__profiles">
+      <div id="services" className="app__profiles">
         {servicesData.map((service, index) => (
           <motion.div
             whileInView={{ opacity: 1 }}
@@ -32,6 +33,7 @@ const About = () => {
             className="app__profile-item"
             key={service.frontmatter.titre + index}
           >
+            <GatsbyImage image={getImage(service.frontmatter.serviceimage.childImageSharp.gatsbyImageData)} alt={service.frontmatter.titre}/>
             <h2 className="bold-text" style={{ marginTop: 20 }}>{service.frontmatter.titre}</h2>
             <p className="p-text" style={{ marginTop: 10 }}>{service.frontmatter.description}</p>
           </motion.div>
@@ -41,4 +43,4 @@ const About = () => {
   )
 }
 
-export default About
+export default AppWrap(About, 'services');

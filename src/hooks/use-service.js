@@ -5,6 +5,11 @@ export const useServicesData = () => {
     allMarkdownRemark {
       nodes {
         frontmatter {
+          serviceimage {
+            childImageSharp {
+              gatsbyImageData(layout: CONSTRAINED, placeholder: TRACED_SVG, formats: WEBP)
+            }
+          }
           description
           titre
         }
