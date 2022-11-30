@@ -4,10 +4,15 @@
     justify-content: center;
     height:100%;
     padding:0 1rem;
-    width:100%;
     position:relative;
+    width:100%;
     color: #000;
     z-index:1;
+
+    @media screen and (max-width: 500px) {
+        position:static;
+        padding:0;
+    }
 
     &::before{
         content:"";
@@ -62,6 +67,10 @@
         max-height:100%;
         color: var(--white-color);
         line-height:1.5;
+
+        @media screen and (max-width: 500px) {
+            align-items:center;
+        }
 
         .app__hero-title{
             font-weight:bold;

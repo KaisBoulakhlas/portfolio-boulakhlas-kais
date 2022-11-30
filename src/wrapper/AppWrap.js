@@ -9,10 +9,6 @@ const AppWrap = (Component, idName, classNames) => function HOC() {
         <SocialMedia />
         <div className="app__wrapper app__flex">
             <Component />
-            <div className="copyright">
-                <p className="p-text">{new Date().getFullYear()} - {siteMetadata.author}</p>
-                <p className="p-text">Tous droits réservés</p>
-            </div>
         </div>
         <NavigationDots active={idName} />
     </div>

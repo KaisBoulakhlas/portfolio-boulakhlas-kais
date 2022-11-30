@@ -19,8 +19,12 @@ const Header = () => {
           <p className='app__hero-paragraph'>
             {siteMetaData.description}
           </p>
-          <Link className='app__hero-button' to="#about">A propos</Link>
+          <Link className='app__hero-button' to="#services">A propos</Link>
         </div>
+      </div>
+      <div className="copyright">
+                <p className="p-text">{new Date().getFullYear()} - {siteMetaData.author}</p>
+                <p className="p-text">Tous droits réservés</p>
       </div>
     </div>
   )
