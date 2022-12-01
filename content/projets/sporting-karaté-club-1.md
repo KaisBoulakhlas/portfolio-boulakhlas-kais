@@ -6,7 +6,7 @@ codelink: https://github.com/KaisBoulakhlas/site-karate
 projectimage: ../../static/img/sportingkarate.png
 typeoffile: projet
 type:
-  - Site web
+  - Web
   - Tous
 tags:
   - gatsby
