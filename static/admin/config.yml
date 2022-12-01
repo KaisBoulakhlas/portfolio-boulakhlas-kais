@@ -20,7 +20,9 @@ collections:
     fields:
       - { label: "Titre", name: "titre", widget: "string" }
       - { label: "Description", name: "description", widget: "text" }
-      - { label: "serviceImage", name: "serviceimage", widget: "image" }
+      - { label: "Service image", name: "serviceimage", widget: "image" }
+      - { label: "Type of file", name: "typeoffile", widget: "string" }
+
 
   - name: "projets"
     label: "Projets"
@@ -33,5 +35,6 @@ collections:
       - { label: "Project Link", name: "projectlink", widget: "string" }
       - { label: "Code link", name: "codelink", widget: "string" }
       - { label: "Project Image", name: "projectimage", widget: "image" }
+      - { label: "Type of file", name: "typeoffile", widget: "string" }
       - { label: "Type", name: "type", widget: "string" }
       - { label: "Tags", name: "tags", widget: "list" }

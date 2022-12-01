@@ -8,7 +8,7 @@ import { useServicesData } from '../../hooks/use-service';
 
 const About = () => {
   const servicesData = useServicesData();
-
+  console.log(servicesData);
   const abouts = [
     { title: 'Développement web', description: 'elkklkflkflf',imgUrl: images.about01 },
     { title: 'Développement front-end', description: 'elkklkflkflf',imgUrl:images.about02},
@@ -33,7 +33,6 @@ const About = () => {
             className="app__profile-item"
             key={service.frontmatter.titre + index}
           >
-            <GatsbyImage image={getImage(service.frontmatter.serviceimage.childImageSharp.gatsbyImageData)} alt={service.frontmatter.titre}/>
             <h2 className="bold-text" style={{ marginTop: 20 }}>{service.frontmatter.titre}</h2>
             <p className="p-text" style={{ marginTop: 10 }}>{service.frontmatter.description}</p>
           </motion.div>
