@@ -21,7 +21,7 @@ collections:
       - { label: "Titre", name: "titre", widget: "string" }
       - { label: "Description", name: "description", widget: "text" }
       - { label: "serviceImage", name: "serviceimage", widget: "image" }
-      
+
   - name: "projets"
     label: "Projets"
     folder: "content/projets"
@@ -33,4 +33,5 @@ collections:
       - { label: "Project Link", name: "projectlink", widget: "string" }
       - { label: "Code link", name: "codelink", widget: "string" }
       - { label: "Project Image", name: "projectimage", widget: "image" }
+      - { label: "Type", name: "type", widget: "string" }
       - { label: "Tags", name: "tags", widget: "list" }

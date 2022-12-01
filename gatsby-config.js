@@ -35,6 +35,13 @@ module.exports = {
       },
     }, 
     {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: "projets",
+        path: `${__dirname}/content/projets`,
+      },
+    }, 
+    {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
         "trackingId": "1999"
