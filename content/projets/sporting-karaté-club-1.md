@@ -5,7 +5,9 @@ projectlink: https://sportingkarateclub.netlify.app
 codelink: https://github.com/KaisBoulakhlas/site-karate
 projectimage: ../../static/img/sportingkarate.png
 typeoffile: projet
-type: Site web
+type:
+  - Site web
+  - Tous
 tags:
   - gatsby
   - react
