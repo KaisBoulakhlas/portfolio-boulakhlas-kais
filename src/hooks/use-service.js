@@ -1,8 +1,8 @@
 import { useStaticQuery, graphql } from "gatsby"
 export const useServicesData = () => {
   const servicesData = useStaticQuery(graphql`
-  query MyQuery {
-    allMarkdownRemark {
+  query servicesData {
+    allMarkdownRemark(filter: {frontmatter: {typeoffile: {eq: "service"}}}) {
       nodes {
         frontmatter {
           serviceimage {

@@ -36,5 +36,5 @@ collections:
       - { label: "Code link", name: "codelink", widget: "string" }
       - { label: "Project Image", name: "projectimage", widget: "image" }
       - { label: "Type of file", name: "typeoffile", widget: "string" }
-      - { label: "Type", name: "type", widget: "string" }
+      - { label: "Type", name: "type", widget: "list" }
       - { label: "Tags", name: "tags", widget: "list" }

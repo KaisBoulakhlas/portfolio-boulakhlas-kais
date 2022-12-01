@@ -4,13 +4,22 @@ import { motion } from 'framer-motion'
 import { AppWrap } from '../../wrapper'
 import './project.scss'
 import { useState } from 'react'
+import { useProjectsData } from '../../hooks/use-project'
 
 const Project = () => {
+  const projectsData = useProjectsData();
+  console.log(projectsData);
   const [activeFilter, setActiveFilter] = useState('Tous');
   const [filterProject, setFilterProject] = useState();
   const [animateCard, setAnimateCard] = useState({ y : 0, opacity: 1 })
   const handleWorkFilter = (item) => {
+    setActiveFilter(item);
+    setAnimateCard([{ y: 100, opacity: 0 }]);
 
+    setTimeout(() => {
+      setAnimateCard([{ y: 0, opacity: 1 }]);
+      setFilterProject(projectsData.filter((work) => work.type.includes(item)));
+    }, 500);
   }
 
   return (
