@@ -7,6 +7,7 @@ projectimage: ../../static/img/sportingkarate.png
 typeoffile: projet
 type:
   - Mobile
+  - UI/UX
   - Tous
 tags:
   - gatsby
