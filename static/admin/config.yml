@@ -38,3 +38,13 @@ collections:
       - { label: "Type of file", name: "typeoffile", widget: "string" }
       - { label: "Type", name: "type", widget: "list" }
       - { label: "Tags", name: "tags", widget: "list" }
+
+  - name: "competences"
+    label: "Compétences"
+    folder: "content/competences"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Bg Color", name: "bgcolor", widget: "string" }
+      - { label: "Icon", name: "icon", widget: "image" }
