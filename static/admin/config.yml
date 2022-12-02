@@ -57,7 +57,7 @@ collections:
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Tag", name: "tag", widget: "string" }
-      - { label: 'Start Date', name: 'startdate', widget: 'date', default: '', format: 'YYYY'}
-      - { label: 'End Date', name: 'enddate', widget: 'date', default: '', format: 'YYYY'}
+      - { label: 'Start Date', name: 'startdate', widget: 'string'}
+      - { label: 'End Date', name: 'enddate', widget: 'string'}
       - { label: "Color", name: "color", widget: "string" }
       - { label: "Type of file", name: "typeoffile", widget: "string" }
