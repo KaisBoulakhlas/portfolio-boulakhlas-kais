@@ -48,3 +48,4 @@ collections:
       - { label: "Name", name: "name", widget: "string" }
       - { label: "Bg Color", name: "bgcolor", widget: "string" }
       - { label: "Icon", name: "icon", widget: "image" }
+      - { label: "Type of file", name: "typeoffile", widget: "string" }
