@@ -1,6 +1,6 @@
 ---
 name: NetlifyCMS
-bgcolor: "#fffff"
+bgcolor: "#ffff"
 icon: ../../static/img/netlifycms.png
 typeoffile: competence
 ---
