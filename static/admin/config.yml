@@ -23,7 +23,6 @@ collections:
       - { label: "Service image", name: "serviceimage", widget: "image" }
       - { label: "Type of file", name: "typeoffile", widget: "string" }
 
-
   - name: "projets"
     label: "Projets"
     folder: "content/projets"
@@ -48,4 +47,17 @@ collections:
       - { label: "Name", name: "name", widget: "string" }
       - { label: "Bg Color", name: "bgcolor", widget: "string" }
       - { label: "Icon", name: "icon", widget: "image" }
+      - { label: "Type of file", name: "typeoffile", widget: "string" }
+
+  - name: "experience"
+    label: "Experience"
+    folder: "content/experience"
+    create: true
+    slug: "{{title}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Tag", name: "tag", widget: "string" }
+      - { label: 'Start Date', name: 'startdate', widget: 'date', default: '', format: 'YYYY'}
+      - { label: 'End Date', name: 'enddate', widget: 'date', default: '', format: 'YYYY'}
+      - { label: "Color", name: "color", widget: "string" }
       - { label: "Type of file", name: "typeoffile", widget: "string" }
