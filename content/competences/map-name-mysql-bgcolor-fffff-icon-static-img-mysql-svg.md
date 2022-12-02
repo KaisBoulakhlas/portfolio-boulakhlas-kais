@@ -1,6 +1,6 @@
 ---
 name: Mysql
-bgcolor: "#fffff"
+bgcolor: "#ffff"
 icon: ../../static/img/mysql.png
 typeoffile: competence
 ---
