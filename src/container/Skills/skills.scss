@@ -58,9 +58,9 @@
             height: 150px;
         }
 
-        @media screen and (max-width: 450px) {
-            width: 70px;
-            height: 70px;
+        @media screen and (max-width: 1400px) {
+            width: 50px;
+            height: 50px;
         }
     }
   
@@ -81,9 +81,13 @@
 .app__skills-exp {
     display:flex;
     flex-direction:column;
-    margin:40px auto;
+    margin:0 auto;
     flex:1;
     position:relative;
+
+    @media screen and (max-width: 800px) {
+        margin: 40px auto;
+    }
 
     &::after{
         background-color:#1A1110;
@@ -92,5 +96,143 @@
         width:4px;
         height: 100%;
         left: calc(50% - 2px);
+    }
+
+    .app__skills-exp-item{
+        display:flex;
+        justify-content:flex-end;
+        padding-right:30px;
+        margin:0;
+        width:50%;
+
+        &:nth-child(odd){
+            align-self:flex-end;
+            justify-content:flex-start;
+            padding-right:0;
+            padding-left:30px;
+            
+            .app__skills-exp-item-content{
+                text-align: left;
+                align-items: start;
+    
+                &::after {
+                    box-shadow: -1px 1px 1px rgba(0,0,0,0.2);
+                    right:auto;
+                    left:-7.5px;
+                }    
+
+                @media screen and (max-width: 450px) {
+                    text-align: center;
+                    align-items: center;
+                }
+            }
+    
+            .app__skills-exp-item-tag {
+                left:auto;
+                right:5px;    
+            }
+    
+            .app__skills-exp-item-circle {
+                right:auto;
+                left:-40px;
+            }
+        }
+    }
+
+    .app__skills-exp-item-content{
+        max-width:100%;
+        background-color: #fff;
+        border-radius:5px;
+        display: flex;
+        width:560px;
+        flex-direction: column;
+        position: relative;
+        align-items: flex-end;
+        padding:15px;
+        text-align:right;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+
+
+        @media screen and (max-width: 1500px) {
+            width:300px;
+        }
+
+        @media screen and (max-width: 800px) {
+            width:400px;
+        }
+
+
+        @media screen and (max-width: 500px) {
+            text-align: center;
+            align-items: center;
+            width:300px;
+        }
+
+        @media screen and (max-width: 350px) {
+            width:250px;
+            text-align: center;
+            align-items: center;
+        }
+
+        &::after {
+            content:'';
+            background-color:#fff;
+            position:absolute;
+            box-shadow:1px -1px 1px rgba(0, 0, 0, 0.2);
+            transform: rotate(45deg);
+            right: -7.5px;
+            top:calc(50% - 7.5px);
+            width:15px;
+            height:15px;
+        }
+
+        .app__skills-exp-item-tag{
+            background-color: black;
+            color:#fff;
+            font-size:0.85rem;
+            font-weight:bold;
+            padding:5px;
+            position:absolute;
+            top: 5px;
+            letter-spacing:1px;
+            left: 5px;
+            text-transform: uppercase;
+        }
+
+        .app__skills-exp-item-circle {
+            background-color:#f68338;
+            width:20px;
+            height:20px;
+            border-radius:50%;
+            position:absolute;
+            top:calc(50% - 10px);
+            right: -40px;
+            z-index:100;
+            border: 4px solid #1A1110;
+        }
+
+        .app__skills-exp-item-title {
+            font-size:0.70rem;
+            line-height:24px;
+            margin: 1.25rem 0 0 0;
+            max-width:250px;
+
+            @media screen and (min-width: 2000px) {
+                font-size:1.5rem;
+                max-width:350px;
+                line-height:30px;
+            }
+
+        }
+
+        .app__skills-exp-item-year {
+            color: #777;
+            font-size:0.85rem;
+
+            
+            @media screen and (min-width: 2000px) {
+                font-size:1.5rem;
+            }
+        }
     }
 }

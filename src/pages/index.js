@@ -9,8 +9,8 @@ const IndexPage = () => {
         <Navbar/>
         <Header />
         <About />
-        <Project />
         <Skills />
+        <Project />
         <Footer />
     </div>
   )

@@ -1,13 +1,20 @@
 import React from 'react'
 import { images } from '../../constants'
 import { motion } from 'framer-motion';
-import { AppWrap } from '../../wrapper';
+import { AppWrap, MotionWrap } from '../../wrapper';
 import './about.scss'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import { useServicesData } from '../../hooks/use-service';
+import { useEffect, useState } from 'react';
 
 const About = () => {
   const servicesData = useServicesData();
+  const [services, setServices] = useState([]);
+
+  useEffect(() => {
+    setServices(servicesData);
+  }, [servicesData]);
+
   const abouts = [
     { title: 'Développement web', description: 'elkklkflkflf',imgUrl: images.about01 },
     { title: 'Développement front-end', description: 'elkklkflkflf',imgUrl:images.about02},
@@ -25,7 +32,7 @@ const About = () => {
 
       <div id="services" className="app__profiles">
         {
-          servicesData.map((service, index) => (
+          services?.map((service, index) => (
             <motion.div
               whileInView={{ opacity: 1 }}
               whileHover={{ scale: 1.1 }}
@@ -44,4 +51,8 @@ const About = () => {
   )
 }
 
-export default AppWrap(About, 'services');
+export default AppWrap(
+  MotionWrap(About, 'app__about'),
+  'services',
+  'app__primarybg',
+);

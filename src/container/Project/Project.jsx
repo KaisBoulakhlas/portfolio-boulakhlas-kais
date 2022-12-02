@@ -1,7 +1,7 @@
 import React from 'react'
 import { AiFillEye, AiFillGithub } from 'react-icons/ai'
 import { motion } from 'framer-motion'
-import { AppWrap } from '../../wrapper'
+import { AppWrap, MotionWrap } from '../../wrapper'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import './project.scss'
 import { useState } from 'react'
@@ -59,7 +59,7 @@ const Project = () => {
         className="app__project-portfolio"
       >
         {
-          filterProject.map((project, index) => (
+          filterProject?.map((project, index) => (
             <div className="app__project-item app__flex" key={index}>
               <div
                 className="app__project-img app__flex"
@@ -99,7 +99,7 @@ const Project = () => {
                 <p className="p-text" style={{ marginTop: 10 }}>{project.frontmatter.description}</p>
 
                 <div className="app__project-tag app__flex">
-                  <p className="p-text" style={{ color: "#f68338" }}>#{project.frontmatter.tags.join(' #')}</p>
+                  <p className="p-text" style={{ textAlign: 'center' , color: "#f68338" }}>#{project.frontmatter.tags.join(' #')}</p>
                 </div>
               </div>
             </div>
@@ -110,4 +110,8 @@ const Project = () => {
   )
 }
 
-export default AppWrap(Project, 'projets');
+export default AppWrap(
+  MotionWrap(Project, 'app__works'),
+  'projets',
+  'app__primarybg',
+);

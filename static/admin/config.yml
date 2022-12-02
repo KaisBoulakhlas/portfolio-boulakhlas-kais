@@ -51,7 +51,7 @@ collections:
 
   - name: "experience"
     label: "Experience"
-    folder: "content/experience"
+    folder: "content/experiences"
     create: true
     slug: "{{title}}"
     fields:
