@@ -16,7 +16,7 @@ collections:
     label: "Services"
     folder: "content/services"
     create: true
-    slug: "{{slug}}"
+    slug: "{{titre}}"
     fields:
       - { label: "Titre", name: "titre", widget: "string" }
       - { label: "Description", name: "description", widget: "text" }
@@ -28,7 +28,7 @@ collections:
     label: "Projets"
     folder: "content/projets"
     create: true
-    slug: "{{slug}}"
+    slug: "{{title}}"
     fields:
       - { label: "Titre", name: "title", widget: "string" }
       - { label: "Description", name: "description", widget: "text" }
@@ -43,7 +43,7 @@ collections:
     label: "Compétences"
     folder: "content/competences"
     create: true
-    slug: "{{slug}}"
+    slug: "{{name}}"
     fields:
       - { label: "Name", name: "name", widget: "string" }
       - { label: "Bg Color", name: "bgcolor", widget: "string" }
