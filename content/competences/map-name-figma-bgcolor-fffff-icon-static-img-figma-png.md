@@ -1,6 +1,6 @@
 ---
 name: Figma
-bgcolor: "#e4e4e4"
+bgcolor: "#fef4f5"
 icon: ../../static/img/figma.png
 typeoffile: competence
 ---
