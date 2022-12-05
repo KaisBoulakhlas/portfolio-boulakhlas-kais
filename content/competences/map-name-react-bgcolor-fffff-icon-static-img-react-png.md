@@ -1,6 +1,6 @@
 ---
 name: React
-bgcolor: "#e4e4e4"
+bgcolor: "#fef4f5"
 icon: ../../static/img/react.png
 typeoffile: competence
 ---
