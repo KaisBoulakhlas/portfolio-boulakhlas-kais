@@ -1,6 +1,6 @@
 ---
 name: Javascript
-bgcolor: "#e4e4e4"
+bgcolor: "#fef4f5"
 icon: ../../static/img/javascript.png
 typeoffile: competence
 ---
