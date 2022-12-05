@@ -1,6 +1,6 @@
 ---
 name: GatsbyJS
-bgcolor: "#e4e4e4"
+bgcolor: "#fef4f5"
 icon: ../../static/img/icon.png
 typeoffile: competence
 ---
