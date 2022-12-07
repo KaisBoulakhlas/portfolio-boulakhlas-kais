@@ -1,6 +1,6 @@
 ---
-name: Heroku
+name: PostgreSQL
 bgcolor: "#fef4f5"
-icon: ../../static/img/heroku.png
+icon: ../../static/img/postgresql.png
 typeoffile: competence
 ---
