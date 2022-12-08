@@ -1,3 +1,4 @@
+
 .app__navbar {
     width:100%;
     display:flex;
@@ -5,14 +6,19 @@
     align-items:center;
     padding: 1rem 2rem;
     position:fixed;
-    z-index: 999;
+    z-index: 1000;
+    transition: all .3s ease-in-out;
+
+    &.scrolled {
+        background-color: rgba(0,0,0);
+    }
 
     .app__navbar-menu{
         position:relative;
         overflow:hidden;
         width:35px;
         border-radius: 50%;
-        background-color:var(--secondary-color);
+        background-color:$secondary-color;
         height:35px;
         z-index:30;
         transition:all .3s ease-in-out;
@@ -23,7 +29,7 @@
             height:4px;
             cursor:pointer;
             transition: all .3s ease-in-out;
-            background:var(--white-color);
+            background:$white-color;
             border-radius:5px;
           
             &::after{
@@ -33,7 +39,7 @@
                 width:20px;
                 transform: translateY(8px) rotate(0);
                 cursor:pointer;
-                background: var(--white-color);;
+                background: $white-color;
                 border-radius:5px;
                 transition: all .3s ease-in-out;
 
@@ -46,7 +52,7 @@
                 width:20px;
                 transform: translateY(-8px) rotate(0);
                 cursor:pointer;
-                background: var(--white-color);;
+                background: $white-color;
                 border-radius:5px;
                 transition: all .3s ease-in-out;
             }
@@ -63,7 +69,7 @@
             }
         }
 
-        @media screen and (min-width: 900px) {
+        @include for-small-desktop-up(min-width) {
             display:none;
         }
     }
@@ -82,11 +88,10 @@
         justify-content: flex-end;
         align-items:flex-end;
         flex-direction: column;
-        background-color:var(--white-color);
+        background-color:$white-color;
         transition: all .4s ease-in-out;
-
         background: url('../../assets/images/bgWhite.png');
-        background-color: var(--white-color);
+        background-color: $white-color;
         background-size: cover;
         background-repeat: repeat;
     
@@ -99,7 +104,6 @@
           padding: 0;
           height: 100%;
           width: 100%;
-    
           display: flex;
           justify-content: flex-start;
           align-items: flex-start;
@@ -109,16 +113,16 @@
                 margin: 1rem;
         
                 a {
-                    color: var(--gray-color);
+                    color: $gray-color;
                     text-decoration: none;
                     font-size: 1rem;
                     text-transform: uppercase;
                     font-weight: 500;
-            
+                    cursor: pointer;
                     transition: all 0.3s ease-in-out;
         
-                    &:hover {
-                        color: var(--secondary-color);
+                    &:hover, &.active {
+                        color: $secondary-color;
                     }
                 }
             }
@@ -128,7 +132,8 @@
             right:0;
             opacity:1;
         }
-        @media screen and (min-width: 900px) {
+
+        @include for-small-desktop-up(min-width) {
             display:none;
         }
     }
@@ -137,9 +142,9 @@
 .app__navbar-logo {
     border-radius: 50%;
     background-color: transparent;
-    border: 1px solid var(--white-color);
+    border: 1px solid $white-color;
     width:50px;
-    color: var(--white-color);
+    color: $white-color;
     height:50px;
     transition:0.3s ease-in-out;
     cursor: pointer;
@@ -148,8 +153,8 @@
         background-color: #CACACA26;
         transform: translate3d(0,-5px,0);
     }
-
-    @media screen and (min-width:2000px) {
+    
+    @include for-big-desktop-up {
         width:100px;
         font-size: 2rem;
         height:100px;
@@ -171,31 +176,38 @@
         div {
             width: 0;
             height: 3px;
-            background: var(--secondary-color);
+            background: $secondary-color;
             margin-top: 5px;
             border-radius:10px;
             transition: all 0.3s ease-in-out;
-          }
+        }
 
-          a {
-            color:var(--white-color);
+        a {
+            color:$white-color;
             text-decoration: none;
             text-transform:uppercase;
             font-weight:500;
-
             transition: all 0.3s ease-in-out;
 
             &:hover {
-              color: var(--secondary-color);
+                color: $secondary-color;
             }
+
+            &.active {
+                div {
+                  width:30px;
+                }
+                color:$secondary-color;
+              }
         }
 
         &:hover div {
             width:30px;
         }
+        
     }
 
-    @media screen and (max-width: 900px) {
+    @include for-small-desktop-up(max-width) {
         display:none;
     }
 }

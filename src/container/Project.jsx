@@ -1,12 +1,10 @@
 import React from 'react'
 import { AiFillEye, AiFillGithub } from 'react-icons/ai'
 import { motion } from 'framer-motion'
-import { AppWrap, MotionWrap } from '../../wrapper'
+import { AppWrap, MotionWrap } from '../wrapper'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
-import './project.scss'
-import { useState } from 'react'
-import { useProjectsData } from '../../hooks/use-project'
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react'
+import { useProjectsData } from '../hooks/use-project'
 
 const Project = () => {
   const projectsData = useProjectsData();
@@ -36,9 +34,9 @@ const Project = () => {
   }, [projectsData]);
 
   return (
-    <div className='container'>
-      <h2 className='head-text'>
-        Mes différents<span>Projets</span>
+    <div>
+      <h2 style={{ padding: "2rem 0" }} className='head-text'>
+        Mes différents<span> Projets</span>
       </h2>
       <div id="projets" className="app__project-filter">
         {
@@ -111,7 +109,7 @@ const Project = () => {
 }
 
 export default AppWrap(
-  MotionWrap(Project, 'app__works'),
+  MotionWrap(Project, 'app__projects'),
   'projets',
   'app__primarybg',
 );

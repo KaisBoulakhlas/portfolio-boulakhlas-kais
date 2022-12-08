@@ -1,7 +1,7 @@
 import * as React from "react"
 import { Navbar } from "../components"
-import { About, Footer, Skills, Header, Project } from '../container' 
-import './index.scss' 
+import { About, Footer, Skills, Header, Project, Experiences } from '../container' 
+import "../assets/sass/index.scss"
 
 const IndexPage = () => {
   return (
@@ -9,6 +9,7 @@ const IndexPage = () => {
         <Navbar/>
         <Header />
         <About />
+        <Experiences />
         <Skills />
         <Project />
         <Footer />

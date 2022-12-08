@@ -1,10 +1,9 @@
 import React from 'react'
-import { images } from '../../constants'
+import { images } from '../constants'
 import { motion } from 'framer-motion';
-import { AppWrap, MotionWrap } from '../../wrapper';
-import './about.scss'
+import { AppWrap, MotionWrap } from '../wrapper';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
-import { useServicesData } from '../../hooks/use-service';
+import { useServicesData } from '../hooks/use-service';
 import { useEffect, useState } from 'react';
 
 const About = () => {
@@ -23,11 +22,9 @@ const About = () => {
   ]
 
   return (
-    <div className='container'>
+    <div>
       <h2 className='head-text'>
         Mes <span>Services</span>
-        <br />
-        Pour Votre <span>Projet Informatique</span>
       </h2>
 
       <div id="services" className="app__profiles">
@@ -54,5 +51,5 @@ const About = () => {
 export default AppWrap(
   MotionWrap(About, 'app__about'),
   'services',
-  'app__primarybg',
+  'app__whitebg',
 );

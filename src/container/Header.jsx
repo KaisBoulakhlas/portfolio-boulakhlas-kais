@@ -1,9 +1,8 @@
 import { Link } from 'gatsby'
 import React from 'react'
-import Banner from '../../assets/videos/Banner.mp4'
-import { useMetaData } from '../../hooks/use-meta-data'
-import { AppWrap } from '../../wrapper'
-import './header.scss'
+import Banner from '../assets/videos/Banner.mp4'
+import { useMetaData } from '../hooks/use-meta-data'
+import { AppWrap } from '../wrapper'
 
 const Header = () => {
   const siteMetaData = useMetaData();

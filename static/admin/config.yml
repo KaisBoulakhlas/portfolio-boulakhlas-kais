@@ -55,6 +55,7 @@ collections:
     create: true
     slug: "{{title}}"
     fields:
+      - { label: "ID", name: "id", widget: "number", value_type: "int", min: 1, max: 101, step: 1  }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Tag", name: "tag", widget: "string" }
       - { label: 'Start Date', name: 'startdate', widget: 'string'}
