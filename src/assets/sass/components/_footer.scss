@@ -76,10 +76,6 @@
   
       margin: 0.75rem 0;
       border-radius: 10px;
-      cursor: pointer;
-      background-color: $primary-color;
-  
-      transition: all 0.3s ease-in-out;
   
       input,
       textarea {
@@ -91,15 +87,16 @@
         font-family: $font-base;
         color: $secondary-color;
         outline: none;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+          box-shadow: 0 0 25px $primary-color;
+        }
       }
   
       textarea {
         height: 170px;
         resize: none;
-      }
-  
-      &:hover {
-        box-shadow: 0 0 25px $primary-color;
       }
     }
   

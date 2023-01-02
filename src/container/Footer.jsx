@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
-
+import Recaptcha from 'react-google-recaptcha';
 import { images } from '../constants';
 import { AppWrap, MotionWrap } from '../wrapper';
+
+const RECAPTCHA_KEY = process.env.GATSBY_APP_SITE_RECAPTCHA_KEY;
 
 function encode(data) {
   return Object.keys(data)
@@ -13,6 +15,8 @@ const Footer = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [buttonDisabled, setButtonDisabled] = useState(true);
+  const recaptchaRef = React.createRef();
 
   const { username, email, message } = formData;
 
@@ -25,13 +29,13 @@ const Footer = () => {
     e.preventDefault();
     setLoading(true);
     const form = e.target
-    //const recaptchaValue = recaptchaRef.current.getValue();
+    const recaptchaValue = recaptchaRef.current.getValue();
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: encode({
         'form-name': form.getAttribute('name'),
-        //'g-recaptcha-response': recaptchaValue,
+        'g-recaptcha-response': recaptchaValue,
         ...formData,
       }),
     })
@@ -44,7 +48,7 @@ const Footer = () => {
 
   return (
     <>
-      <h2 className="head-text">Vous pouvez me contacter ici</h2>
+      <h2 className="head-text">Vous pouvez <span>me contacter ici</span></h2>
 
       <div id="contact" className="app__footer-cards">
         <div className="app__footer-card ">
@@ -57,7 +61,7 @@ const Footer = () => {
         </div>
       </div>
       {!isFormSubmitted ? (
-        <form method="post" onSubmit={handleSubmit} data-netlify="true" netlify-honeypot="bot-field" name="contact-form" id="contact-form" className="app__footer-form app__flex">
+        <form method="post" onSubmit={handleSubmit} data-netlify="true" data-netlify-recaptcha="true" netlify-honeypot="bot-field" name="contact-form" id="contact-form" className="app__footer-form app__flex">
           <input type="hidden" name="form-name" value="contact-form" />
           <p hidden>
             <label htmlFor="bot-field">
@@ -80,11 +84,21 @@ const Footer = () => {
               onChange={handleChangeInput}
             />
           </div>
-          <button type="submit" className="button">{!loading ? 'Envoyer' : 'Envoi...'}</button>
+          <section className="app__flex" style={{ gap:"20px", marginRight:"auto" }}>
+            <input type="checkbox" name="checkbox" required/><small>J'ai lu et je suis d'accord avec la politique de confidentialité et les mentions légales de ce site.</small>
+          </section>
+          <Recaptcha
+            ref={recaptchaRef}
+            sitekey={RECAPTCHA_KEY}
+            size="normal"
+            id="recaptcha-google"
+            onChange={() => setButtonDisabled(false)} 
+          />
+          <button type="submit" className="button" disabled={buttonDisabled}>{!loading ? 'Envoyer' : 'Envoi...'}</button>
         </form>
       ) : (
         <div>
-          <h3 className="head-text">
+          <h3 className="response">
             Merci de votre réponse, je vous recontacterai dans les plus brefs délais !
           </h3>
         </div>
