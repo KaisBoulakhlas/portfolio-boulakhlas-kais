@@ -1,5 +1,4 @@
 import React from 'react'
-import { images } from '../constants'
 import { motion } from 'framer-motion';
 import { AppWrap, MotionWrap } from '../wrapper';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
@@ -14,15 +13,8 @@ const About = () => {
     setServices(servicesData);
   }, [servicesData]);
 
-  const abouts = [
-    { title: 'Développement web', description: 'elkklkflkflf',imgUrl: images.about01 },
-    { title: 'Développement front-end', description: 'elkklkflkflf',imgUrl:images.about02},
-    { title: 'Développement back-end', description: 'elkklkflkflf', imgUrl:images.about03},
-    { title: 'Dévelopmment mobile', description: 'elkklkflkflf', imgUrl:images.about04}
-  ]
-
   return (
-    <div>
+    <>
       <h2 className='head-text'>
         Mes <span>Services</span>
       </h2>
@@ -44,7 +36,7 @@ const About = () => {
           ))
         }
       </div>
-    </div>
+    </>
   )
 }
 

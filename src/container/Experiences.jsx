@@ -6,7 +6,7 @@ import { AppWrap, MotionWrap } from '../wrapper';
 const Experiences = () => {
   const experiencesData = useExperiencesData();
   const [experiences, setExperiences] = useState([]);
-    console.log(experiences?.sort((a, b) => b.frontmatter.startdate - a.frontmatter.startdate));
+
   useEffect(() => {
     setExperiences(experiencesData);
   }, [experiencesData]);
@@ -18,7 +18,7 @@ const Experiences = () => {
         </h2>
         <div id="expériences" className="app__skills-exp">
         {
-        experiences?.sort((a, b) => b.frontmatter.startdate - a.frontmatter.startdate).map((experience, index) => (
+        experiences?.sort((a, b) => b.frontmatter.id - a.frontmatter.id).map((experience, index) => (
             <motion.div key={index} className='app__skills-exp-item'>
             <div className='app__skills-exp-item-content'>
             <motion.div

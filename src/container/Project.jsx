@@ -41,13 +41,13 @@ const Project = () => {
       <div id="projets" className="app__project-filter">
         {
           types?.map((item, index) => (
-            <div 
+            <button 
               key={index}
               onClick={() => handleprojectFilter(item)}
               className={`app__project-filter-item app__flex p-text ${activeFilter === item ? 'item-active' : ''}`}
             >
               {item}
-            </div>
+            </button>
           ))
         }
       </div>

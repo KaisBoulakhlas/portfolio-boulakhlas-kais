@@ -5,6 +5,7 @@ export const useExperiencesData = () => {
     allMarkdownRemark(filter: {frontmatter: {typeoffile: {eq: "experience"}}}) {
       nodes {
         frontmatter {
+          id
           tag
           startdate
           enddate

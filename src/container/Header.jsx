@@ -18,7 +18,7 @@ const Header = () => {
           <p className='app__hero-paragraph'>
             {siteMetaData.description}
           </p>
-          <Link className='app__hero-button' to="#services">A propos</Link>
+          <Link className='button' to="#services">A propos</Link>
         </div>
       </div>
       <div className="copyright">

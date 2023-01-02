@@ -27,22 +27,22 @@ const Navbar = () => {
 
     return (
         <nav className={ scrolled ? "app__navbar scrolled" : "app__navbar" }>
-            <div onClick={() => window.scrollTo(0,0)} className="app__navbar-logo app__flex">
+            <button onClick={() => window.scrollTo(0,0)} className="app__navbar-logo app__flex">
                 K
-            </div>
+            </button>
             <ul className="app__navbar-links">
                 {
                     menu?.map((item) => (
                         <li className="app__flex p-text" key={`link-${item}`}>
-                            <LinkScroll activeClass="active" spy={true}  to={item} offset={-70}>{item}<div/></LinkScroll>
+                            <LinkScroll activeClass="active" spy={true}  to={item} offset={-30}>{item}<div/></LinkScroll>
                         </li>   
                     ))
                 }
             </ul>
 
-            <div role="button" tabIndex={0} className="app__navbar-menu app__flex" onClick={handleClick}>
-                    <div className={ toggle ? "app__navbar-icon app__flex rotated" : "app__navbar-icon app__flex"} ></div>
-            </div>
+            <button className="app__navbar-menu app__flex" onClick={handleClick}>
+                    <span className={ toggle ? "app__navbar-icon app__flex rotated" : "app__navbar-icon app__flex"} />
+            </button>
             <div
                 className={ toggle ? "app__navbar-side open" : "app__navbar-side"}
             >
