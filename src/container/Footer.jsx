@@ -15,7 +15,6 @@ const Footer = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [buttonDisabled, setButtonDisabled] = useState(true);
   const recaptchaRef = React.createRef();
 
   const { username, email, message } = formData;
@@ -92,9 +91,8 @@ const Footer = () => {
             sitekey={RECAPTCHA_KEY}
             size="normal"
             id="recaptcha-google"
-            onChange={() => setButtonDisabled(false)} 
           />
-          <button type="submit" className="button" disabled={buttonDisabled}>{!loading ? 'Envoyer' : 'Envoi...'}</button>
+          <button type="submit" className="button">{!loading ? 'Envoyer' : 'Envoi...'}</button>
         </form>
       ) : (
         <div>
