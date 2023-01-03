@@ -2,7 +2,7 @@
     @media (max-width: 599px) { @content; }
 }
 @mixin for-tablet-up($width) {
-    @media ($width: 600px) { @content; }
+    @media ($width: 850px) { @content; }
 }
 @mixin for-small-desktop-up($width) {
     @media ($width: 900px) { @content; }

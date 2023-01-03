@@ -2,6 +2,7 @@ import * as React from "react"
 import { Navbar } from "../components"
 import { About, Footer, Skills, Header, Project, Experiences } from '../container' 
 import "../assets/sass/index.scss"
+import { Seo } from "../components/Seo"
 
 const IndexPage = () => {
   return (
@@ -19,4 +20,6 @@ const IndexPage = () => {
 
 export default IndexPage
 
-export const Head = () => <title>Portfolio</title>
+export const Head = () => (
+  <Seo title="Portfolio - Kaïs Boulakhlas" />
+)

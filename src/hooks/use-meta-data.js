@@ -8,6 +8,9 @@ export const useMetaData = () => {
         description
         siteUrl
         author
+        keywords
+        image
+        descriptionMeta
       }
     }
   }

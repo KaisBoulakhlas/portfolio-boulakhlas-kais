@@ -83,8 +83,8 @@ const Footer = () => {
               onChange={handleChangeInput}
             />
           </div>
-          <section className="app__flex" style={{ gap:"20px", marginRight:"auto" }}>
-            <input type="checkbox" name="checkbox" required/><small>J'ai lu et je suis d'accord avec la politique de confidentialité et les mentions légales de ce site.</small>
+          <section className="app__flex">
+            <input type="checkbox" required/><small>J'ai lu et je suis d'accord avec la politique de confidentialité et les mentions légales de ce site.</small>
           </section>
           <Recaptcha
             ref={recaptchaRef}

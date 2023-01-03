@@ -2,12 +2,26 @@ require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
+const {
+  NODE_ENV,
+  URL: NETLIFY_SITE_URL = 'https://cerulean-blini-4e9733.netlify.app/',
+  CONTEXT: NETLIFY_ENV = NODE_ENV,
+} = process.env
+const isNetlifyProduction = NETLIFY_ENV === 'production'
+const siteUrl = isNetlifyProduction ? NETLIFY_SITE_URL : 'http://localhost:8000/'
+
 module.exports = {
   siteMetadata: {
     title: `Boulakhlas Kaïs`,
-    description: `Développeur web qui apprend tout les jours`,
+    descriptionMeta:`Kaïs Boulakhlas, développeur web qui apprend tous les jours. 
+    Ce site est un portfolio montrant mes différentes compétences et 
+    expériences ainsi que mes différents projets dans l'informatique. 
+    Je propose mes services tels que le développement de sites web/applications web et plus...`,
+    description: `Développeur web qui apprend tous les jours`,
     author: `@kaisboulakhlas`,
-    siteUrl: `https://www.yourdomain.tld`
+    keywords: `kaïs boulakhlas, développeur web, portfolio, projets, expériences, compétences, services`,
+    siteUrl: siteUrl,
+    image: `src/assets/images/favicon.png`
   },
   plugins: [
     "gatsby-plugin-netlify-cms", 
@@ -69,7 +83,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        "icon": "src/assets/images/icon.png"
+        "icon": "src/assets/images/favicon.png"
       }
     }, 
     'gatsby-plugin-offline', 
