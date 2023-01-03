@@ -12,13 +12,15 @@ function encode(data) {
 }
 
 const Footer = () => {
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [formData, setFormData] = useState({ username: '', email: '', message: '' });
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [errorCaptcha, setErrorCaptcha] = useState(false);
+  const [disabled, setDisabled] = useState(true);
   const recaptchaRef = React.createRef();
 
   const { username, email, message } = formData;
-
+  
   const handleChangeInput = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
@@ -29,6 +31,12 @@ const Footer = () => {
     setLoading(true);
     const form = e.target
     const recaptchaValue = recaptchaRef.current.getValue();
+    if(recaptchaValue === "") {
+      setFormData({ username: '', email: '', message: '' });
+      setErrorCaptcha(true);
+      return;
+    };
+
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -67,17 +75,26 @@ const Footer = () => {
                 Don’t fill this out: <input name="bot-field" onChange={handleChangeInput} />
             </label>
           </p>
+          {
+            errorCaptcha && (
+              <div>
+                <h3 className="response">
+                  Captcha invalide, veuillez le cocher !
+                </h3>
+              </div>
+            )
+          }
           <div className="app__flex">
-            <input className="p-text" type="text" placeholder="Nom" name="username" value={username} onChange={handleChangeInput} required />
+            <input className="p-text" type="text" placeholder="Nom*" name="username" value={username || ""} onChange={handleChangeInput} required />
           </div>
           <div className="app__flex">
-            <input className="p-text" type="email" placeholder="Email" name="email" value={email} onChange={handleChangeInput} required />
+            <input className="p-text" type="email" placeholder="Email*" name="email" value={email || ""} onChange={handleChangeInput} required />
           </div>
           <div>
             <textarea
               className="p-text"
-              placeholder="Message"
-              value={message}
+              placeholder="Message*"
+              value={message || ""}
               name="message"
               required
               onChange={handleChangeInput}
@@ -91,8 +108,9 @@ const Footer = () => {
             sitekey={RECAPTCHA_KEY}
             size="normal"
             id="recaptcha-google"
+            onChange={() => setDisabled(false)}
           />
-          <button type="submit" className="button">{!loading ? 'Envoyer' : 'Envoi...'}</button>
+          <button type="submit" disabled={disabled} className={ disabled ? "button disable" : "button" }>{loading && recaptchaRef.current !== null ? 'Envoi...' : 'Envoyer'}</button>
         </form>
       ) : (
         <div>

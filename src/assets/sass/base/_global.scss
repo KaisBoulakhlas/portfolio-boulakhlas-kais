@@ -66,7 +66,7 @@
       font-size:1.5rem;
   }
 
-  &:hover {
+  &:not(.disable):hover {
       color:$white-color;
 
       &::before, &::after {
@@ -270,7 +270,7 @@
 
 .response {
   color: #030303;
-  font-size: 1.75rem;
+  font-size: 1.1rem;
   font-weight: 800;
   margin-top: 4rem;
   text-align: center;
@@ -316,4 +316,8 @@ input[type="checkbox"] {
   display: flex;
   align-items:center;
   justify-content: center;
+}
+
+.disable {
+  cursor:not-allowed;
 }
