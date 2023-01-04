@@ -9,7 +9,7 @@
     color: #000;
     z-index:1;
 
-    @include for-phone-only{
+    @include for-phone-only {
         position:static;
         padding:0;
         margin-top:-8rem;
@@ -74,28 +74,49 @@
             align-items:center;
         }
 
-        .app__hero-title{
+        .app__hero-title {
             font-weight:bold;
             text-transform: uppercase;
             letter-spacing: 3px;
+            font-size:2rem;
+            text-align: center;
             margin-bottom:1.5rem;
-            font-size:clamp(1.5rem, 6vw, 4rem);
 
             @include for-big-desktop-up {
-                font-size:6rem;
+                font-size:3rem;
+            }
+
+            @include for-tablet-up(max-width) {
+                font-size:1.5rem;
+            }
+
+            @include for-phone-only {
+                font-size:0.8rem;
             }
         }
         
         .app__hero-paragraph{
-            font-size:clamp(1rem, 3vw, 1.5rem);
             margin-bottom:2.75rem;
+            font-weight: 100;
+            font-size:0.7rem;
+
+            div h1 {
+                text-align: center;
+            }
 
             @include for-tablet-up(min-width) {
                 margin-bottom:2rem;
             }
+            @include for-tablet-up(max-width) {
+                font-size:0.7rem;
+            }
 
             @include for-big-desktop-up {
                 font-size:2rem;
+            }
+
+            @include for-phone-only {
+                font-size:0.5rem;
             }
         }
     }
