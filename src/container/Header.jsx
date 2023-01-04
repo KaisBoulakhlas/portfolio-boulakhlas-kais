@@ -9,19 +9,23 @@ const Header = () => {
   const siteMetaData = useMetaData();
 
   useEffect(() => {
-    setTimeout(() => {
-      const pointer = document.querySelector('.app__hero-title div h1 .react-typewriter-pointer');
-      pointer.style.display = "none";
-      pointer.classList.remove("add-cursor-animate");
-    }, 2250)
+    if (typeof document !== 'undefined'){
+      setTimeout(() => {
+        const pointer = document.querySelector('.app__hero-title div h1 .react-typewriter-pointer');
+        pointer.style.display = "none";
+        pointer.classList.remove("add-cursor-animate");
+      }, 2250)
+    }
   }, [])
 
   useEffect(() => {
-    setTimeout(() => {
-      const pointer = document.querySelector('.app__hero-paragraph div h1 .react-typewriter-pointer');
-      pointer.style.display = "none";
-      pointer.classList.remove("add-cursor-animate");
-    }, 15000)
+    if (typeof document !== 'undefined'){
+      setTimeout(() => {
+        const pointer = document.querySelector('.app__hero-paragraph div h1 .react-typewriter-pointer');
+        pointer.style.display = "none";
+        pointer.classList.remove("add-cursor-animate");
+      }, 15000)
+    }
   }, [])
   
   return (
