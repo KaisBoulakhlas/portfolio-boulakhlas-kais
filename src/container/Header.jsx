@@ -1,5 +1,5 @@
 import { Link } from 'gatsby'
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Banner from '../assets/videos/Banner.mp4'
 import { useMetaData } from '../hooks/use-meta-data'
 import { AppWrap } from '../wrapper'
@@ -7,21 +7,26 @@ import TypeWriterEffect from 'react-typewriter-effect';
 
 const Header = () => {
   const siteMetaData = useMetaData();
+  const [documentTitle, setDocumentTitle] = useState(null);
+  const [documentDesc, setDocumentDesc] = useState(null);
+  
   const refTitle = useRef(null);
   const refDesc = useRef(null);
 
   useEffect(() => {
+      setDocumentTitle(refTitle);
       const timerTitle = setTimeout(() => {
-      const pointerTitle = refTitle.current.childNodes[0].childNodes[0].childNodes[1];
-      if(pointerTitle){
-        pointerTitle.style.display = "none";
-        pointerTitle.classList.remove("add-cursor-animate");
-      }
+        const pointerTitle = refTitle.current.childNodes[0].childNodes[0].childNodes[1];
+        if(pointerTitle){
+          pointerTitle.style.display = "none";
+          pointerTitle.classList.remove("add-cursor-animate");
+        }
       }, 2250);
       return () => clearTimeout(timerTitle);
   }, [])
 
   useEffect(() => {
+      setDocumentDesc(refDesc);
       const timerDesc = setTimeout(() => {
       const pointerDesc = refDesc.current.childNodes[0].childNodes[0].childNodes[1];
         if(pointerDesc) {
@@ -39,7 +44,7 @@ const Header = () => {
       </div>
       <div className='app__hero-content'>
         <div className='app__hero-items'>
-          <div className='app__hero-title' ref={refTitle}>
+          <div className='app__hero-title' ref={documentTitle && refTitle}>
             <TypeWriterEffect
               startDelay={100}
               cursorColor="white"
@@ -47,7 +52,7 @@ const Header = () => {
               typeSpeed={100}
             />
           </div>
-          <span className='app__hero-paragraph' ref={refDesc}>
+          <span className='app__hero-paragraph' ref={documentDesc && refDesc}>
           <TypeWriterEffect
             startDelay={2250}
             cursorColor="white"
