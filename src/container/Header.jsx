@@ -7,25 +7,25 @@ import TypeWriterEffect from 'react-typewriter-effect';
 
 const Header = () => {
   const siteMetaData = useMetaData();
+  const refTitle = useRef(null);
+  const refDesc = useRef(null);
 
   useEffect(() => {
-    if (typeof document !== 'undefined'){
-      setTimeout(() => {
-        const pointer = document.querySelector('.app__hero-title div h1 .react-typewriter-pointer');
-        pointer.style.display = "none";
-        pointer.classList.remove("add-cursor-animate");
-      }, 2250)
-    }
+      const timerTitle = setTimeout(() => {
+      const pointerTitle = refTitle.current.myRef.current.childNodes[0].childNodes[1];
+        pointerTitle.style.display = "none";
+        pointerTitle.classList.remove("add-cursor-animate");
+      }, 2250);
+      return () => clearTimeout(timerTitle);
   }, [])
 
   useEffect(() => {
-    if (typeof document !== 'undefined'){
-      setTimeout(() => {
-        const pointer = document.querySelector('.app__hero-paragraph div h1 .react-typewriter-pointer');
-        pointer.style.display = "none";
-        pointer.classList.remove("add-cursor-animate");
-      }, 15000)
-    }
+      const timerDesc = setTimeout(() => {
+      const pointerDesc = refDesc.current.myRef.current.childNodes[0].childNodes[1];
+        pointerDesc.style.display = "none";
+        pointerDesc.classList.remove("add-cursor-animate");
+      }, 17000);
+      return () => clearTimeout(timerDesc);
   }, [])
   
   return (
@@ -38,6 +38,7 @@ const Header = () => {
           <div className='app__hero-title'>
             <TypeWriterEffect
               startDelay={100}
+              ref={refTitle}
               cursorColor="white"
               text={siteMetaData.title}
               typeSpeed={100}
@@ -54,6 +55,7 @@ const Header = () => {
               'Développeur web qui apprend tous les jours...'
             ]}
             multiTextDelay={200}
+            ref={refDesc}
             typeSpeed={20}
           />
           </span>
