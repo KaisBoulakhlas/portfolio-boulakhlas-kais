@@ -7,14 +7,12 @@ import TypeWriterEffect from 'react-typewriter-effect';
 
 const Header = () => {
   const siteMetaData = useMetaData();
-  const [documentTitle, setDocumentTitle] = useState(null);
-  const [documentDesc, setDocumentDesc] = useState(null);
   
   const refTitle = useRef(null);
   const refDesc = useRef(null);
 
   useEffect(() => {
-      setDocumentTitle(refTitle);
+    if (typeof window !== `undefined` && typeof document !== `undefined`) { 
       const timerTitle = setTimeout(() => {
         const pointerTitle = refTitle.current.childNodes[0].childNodes[0].childNodes[1];
         if(pointerTitle){
@@ -23,18 +21,20 @@ const Header = () => {
         }
       }, 2250);
       return () => clearTimeout(timerTitle);
+    }
   }, [])
 
   useEffect(() => {
-      setDocumentDesc(refDesc);
+    if (typeof window !== `undefined` && typeof document !== `undefined`) { 
       const timerDesc = setTimeout(() => {
-      const pointerDesc = refDesc.current.childNodes[0].childNodes[0].childNodes[1];
-        if(pointerDesc) {
-          pointerDesc.style.display = "none";
-          pointerDesc.classList.remove("add-cursor-animate");
-        }
-      }, 17000);
-      return () => clearTimeout(timerDesc);
+        const pointerDesc = refDesc.current.childNodes[0].childNodes[0].childNodes[1];
+          if(pointerDesc) {
+            pointerDesc.style.display = "none";
+            pointerDesc.classList.remove("add-cursor-animate");
+          }
+        }, 17000);
+        return () => clearTimeout(timerDesc);
+    }
   }, [])
   
   return (
@@ -44,28 +44,29 @@ const Header = () => {
       </div>
       <div className='app__hero-content'>
         <div className='app__hero-items'>
-          <div className='app__hero-title' ref={documentTitle && refTitle}>
-            <TypeWriterEffect
-              startDelay={100}
-              cursorColor="white"
-              text={siteMetaData.title}
-              typeSpeed={100}
-            />
-          </div>
-          <span className='app__hero-paragraph' ref={documentDesc && refDesc}>
-          <TypeWriterEffect
-            startDelay={2250}
-            cursorColor="white"
-            multiText={[
-              'Portfolio montrant mes compétences/expériences,',
-              'Ainsi que mes différents projets dans l\'informatique,',
-              'Développement de sites web/applications web...',
-              'Développeur web qui apprend tous les jours...'
-            ]}
-            multiTextDelay={200}
-            typeSpeed={20}
-          />
-          </span>
+              <div className='app__hero-title' ref={refTitle}>
+                <TypeWriterEffect
+                  startDelay={100}
+                  cursorColor="white"
+                  text={siteMetaData.title}
+                  typeSpeed={100}
+                />
+                </div>
+
+              <span className='app__hero-paragraph' ref={refDesc}>
+                  <TypeWriterEffect
+                    startDelay={2250}
+                    cursorColor="white"
+                    multiText={[
+                      'Portfolio montrant mes compétences/expériences,',
+                      'Ainsi que mes différents projets dans l\'informatique,',
+                      'Développement de sites web/applications web...',
+                      'Développeur web qui apprend tous les jours...'
+                    ]}
+                    multiTextDelay={200}
+                    typeSpeed={20}
+                  />
+              </span>
           <Link className='button' to="#services">A propos</Link>
         </div>
       </div>
