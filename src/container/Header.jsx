@@ -44,7 +44,7 @@ const Header = () => {
       </div>
       <div className='app__hero-content'>
         <div className='app__hero-items'>
-              <div className='app__hero-title' ref={refTitle}>
+              <div className='app__hero-title' ref={(typeof window !== `undefined` && typeof document !== `undefined`) && refTitle}>
                 <TypeWriterEffect
                   startDelay={100}
                   cursorColor="white"
@@ -53,7 +53,7 @@ const Header = () => {
                 />
                 </div>
 
-              <span className='app__hero-paragraph' ref={refDesc}>
+              <span className='app__hero-paragraph' ref={(typeof window !== `undefined` && typeof document !== `undefined`) && refDesc}>
                   <TypeWriterEffect
                     startDelay={2250}
                     cursorColor="white"
