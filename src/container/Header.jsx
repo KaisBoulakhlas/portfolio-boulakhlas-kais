@@ -13,8 +13,10 @@ const Header = () => {
   useEffect(() => {
       const timerTitle = setTimeout(() => {
       const pointerTitle = refTitle.current.childNodes[0].childNodes[0].childNodes[1];
+      if(pointerTitle){
         pointerTitle.style.display = "none";
         pointerTitle.classList.remove("add-cursor-animate");
+      }
       }, 2250);
       return () => clearTimeout(timerTitle);
   }, [])
@@ -22,8 +24,10 @@ const Header = () => {
   useEffect(() => {
       const timerDesc = setTimeout(() => {
       const pointerDesc = refDesc.current.childNodes[0].childNodes[0].childNodes[1];
-        pointerDesc.style.display = "none";
-        pointerDesc.classList.remove("add-cursor-animate");
+        if(pointerDesc) {
+          pointerDesc.style.display = "none";
+          pointerDesc.classList.remove("add-cursor-animate");
+        }
       }, 17000);
       return () => clearTimeout(timerDesc);
   }, [])
