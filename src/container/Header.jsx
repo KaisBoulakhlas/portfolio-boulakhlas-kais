@@ -12,7 +12,7 @@ const Header = () => {
 
   useEffect(() => {
       const timerTitle = setTimeout(() => {
-      const pointerTitle = refTitle.current.myRef.current.childNodes[0].childNodes[1];
+      const pointerTitle = refTitle.current.childNodes[0].childNodes[0].childNodes[1];
         pointerTitle.style.display = "none";
         pointerTitle.classList.remove("add-cursor-animate");
       }, 2250);
@@ -21,7 +21,7 @@ const Header = () => {
 
   useEffect(() => {
       const timerDesc = setTimeout(() => {
-      const pointerDesc = refDesc.current.myRef.current.childNodes[0].childNodes[1];
+      const pointerDesc = refDesc.current.childNodes[0].childNodes[0].childNodes[1];
         pointerDesc.style.display = "none";
         pointerDesc.classList.remove("add-cursor-animate");
       }, 17000);
@@ -35,16 +35,15 @@ const Header = () => {
       </div>
       <div className='app__hero-content'>
         <div className='app__hero-items'>
-          <div className='app__hero-title'>
+          <div className='app__hero-title' ref={refTitle}>
             <TypeWriterEffect
               startDelay={100}
-              ref={refTitle}
               cursorColor="white"
               text={siteMetaData.title}
               typeSpeed={100}
             />
           </div>
-          <span className='app__hero-paragraph'>
+          <span className='app__hero-paragraph' ref={refDesc}>
           <TypeWriterEffect
             startDelay={2250}
             cursorColor="white"
@@ -55,7 +54,6 @@ const Header = () => {
               'Développeur web qui apprend tous les jours...'
             ]}
             multiTextDelay={200}
-            ref={refDesc}
             typeSpeed={20}
           />
           </span>
