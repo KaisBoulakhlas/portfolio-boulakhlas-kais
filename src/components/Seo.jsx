@@ -1,22 +1,21 @@
 import React from "react"
 import { useMetaData } from "../hooks/use-meta-data"
 
-export const Seo = ({ title, descriptionData, pathname, children }) => {
-  const { title: defaultTitle, descriptionData: defaultDescription, image, siteUrl, author, keywords } = useMetaData()
+export const Seo = ({ title, descriptionMeta, pathname, children }) => {
+  const { title: defaultTitle, descriptionMeta: defaultDescription, image, siteUrl, author, keywords } = useMetaData()
 
   const seo = {
     title: title || defaultTitle,
-    descriptionData: descriptionData || defaultDescription,
-    image: `${siteUrl}${image}`,
+    descriptionMeta: descriptionMeta || defaultDescription,
+    image: `${siteUrl}/${image}`,
     url: `${siteUrl}${pathname || ``}`,
     author,
     keywords,
   }
-
   return (
     <>
       <title>{seo.title}</title>
-      <meta name="description" content={seo.descriptionData} />
+      <meta name="description" content={seo.descriptionMeta} />
       <meta name="keywords" content={seo.keywords} />
       <meta name="image" content={seo.image} />
       <meta property="og:type" content="website" />

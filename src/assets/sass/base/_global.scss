@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
 @import '../sass-utils/mixins';
 @import '../sass-utils/variables';
 
@@ -6,12 +5,12 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: $font-base;
   scroll-behavior: smooth;
 }
 
 .app {
   background-color: $primary-color;
-  font-family: $font-base;
 }
 
 .app__whitebg {
@@ -124,8 +123,8 @@
 
 .head-text {
   font-size: 2.75rem;
-  font-weight: 800;
   text-align: center;
+  font-weight:700;
   color: $black-color;
   margin-top:4rem;
   text-transform: capitalize;
@@ -158,7 +157,7 @@
 
 .bold-text {
   font-size: 1rem;
-  font-weight: 800;
+  font-weight: 700;
   color: $black-color;
   text-align: left;
 

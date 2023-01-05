@@ -5,7 +5,6 @@ export const useMetaData = () => {
     site {
       siteMetadata {
         title
-        description
         siteUrl
         author
         keywords

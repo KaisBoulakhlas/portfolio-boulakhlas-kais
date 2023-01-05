@@ -18,7 +18,7 @@ const Header = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       handleDone();
-    }, 26000)
+    }, 29000)
   
     return () => {
       clearTimeout(timer);

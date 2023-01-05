@@ -88,7 +88,20 @@ module.exports = {
       options: {
         "icon": "src/assets/images/favicon.png"
       }
-    }, 
+    },
+    {
+      resolve: 'gatsby-plugin-zopfli',
+      options: {
+        extensions: ['css', 'html', 'js', 'svg']
+      }
+    },
+    {
+      resolve: 'gatsby-plugin-preconnect',
+      options: {
+        domains: ['https://www.gstatic.com'],
+      },
+    },
+    "gatsby-plugin-preact",
     'gatsby-plugin-offline', 
     'gatsby-plugin-netlify'
   ],
