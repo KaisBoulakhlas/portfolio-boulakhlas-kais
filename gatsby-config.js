@@ -101,7 +101,6 @@ module.exports = {
         domains: ['https://www.gstatic.com'],
       },
     },
-    "gatsby-plugin-preact",
     'gatsby-plugin-offline', 
     'gatsby-plugin-netlify'
   ],
