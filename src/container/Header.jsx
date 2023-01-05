@@ -1,42 +1,31 @@
 import { Link } from 'gatsby'
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef } from 'react'
 import Banner from '../assets/videos/Banner.mp4'
 import { useMetaData } from '../hooks/use-meta-data'
 import { AppWrap } from '../wrapper'
-import TypeWriterEffect from 'react-typewriter-effect';
+import { Typewriter } from 'react-simple-typewriter'
 
 const Header = () => {
   const siteMetaData = useMetaData();
-  
-  const refTitle = useRef(null);
   const refDesc = useRef(null);
 
-  useEffect(() => {
-    if (typeof window !== `undefined` && typeof document !== `undefined`) { 
-      const timerTitle = setTimeout(() => {
-        const pointerTitle = refTitle.current.childNodes[0].childNodes[0].childNodes[1];
-        if(pointerTitle){
-          pointerTitle.style.display = "none";
-          pointerTitle.classList.remove("add-cursor-animate");
-        }
-      }, 2250);
-      return () => clearTimeout(timerTitle);
-    }
-  }, [])
+  const handleDone = () => {
+    const pointer = refDesc.current.childNodes[1];
+    pointer.style.display = "none";
+    pointer.style.animation = "none";
+  }
 
   useEffect(() => {
-    if (typeof window !== `undefined` && typeof document !== `undefined`) { 
-      const timerDesc = setTimeout(() => {
-        const pointerDesc = refDesc.current.childNodes[0].childNodes[0].childNodes[1];
-          if(pointerDesc) {
-            pointerDesc.style.display = "none";
-            pointerDesc.classList.remove("add-cursor-animate");
-          }
-        }, 17000);
-        return () => clearTimeout(timerDesc);
+    const timer = setTimeout(() => {
+      handleDone();
+    }, 26000)
+  
+    return () => {
+      clearTimeout(timer);
     }
   }, [])
   
+    
   return (
     <div id="accueil"  className='app__hero'>
       <div className='app__hero-background'>
@@ -44,30 +33,24 @@ const Header = () => {
       </div>
       <div className='app__hero-content'>
         <div className='app__hero-items'>
-              <div className='app__hero-title' ref={(typeof window !== `undefined` && typeof document !== `undefined`) && refTitle}>
-                <TypeWriterEffect
-                  startDelay={100}
-                  cursorColor="white"
-                  text={siteMetaData.title}
-                  typeSpeed={100}
-                />
-                </div>
-
-              <span className='app__hero-paragraph' ref={(typeof window !== `undefined` && typeof document !== `undefined`) && refDesc}>
-                  <TypeWriterEffect
-                    startDelay={2250}
-                    cursorColor="white"
-                    multiText={[
-                      'Portfolio montrant mes compétences/expériences,',
-                      'Ainsi que mes différents projets dans l\'informatique,',
-                      'Développement de sites web/applications web...',
-                      'Développeur web qui apprend tous les jours...'
-                    ]}
-                    multiTextDelay={200}
-                    typeSpeed={20}
-                  />
-              </span>
-          <Link className='button' to="#services">A propos</Link>
+            <h1 className='app__hero-title'>{siteMetaData.title}</h1>
+            <p className='app__hero-paragraph' ref={refDesc}>
+              <Typewriter
+                words={[
+                  'Portfolio montrant mes compétences/expériences,',
+                  'Ainsi que mes différents projets dans l\'informatique,',
+                  'Développement de sites web/applications web et plus...',
+                  'Développeur web qui apprend tous les jours...'
+                ]}
+                loop={1}
+                cursor
+                cursorStyle='|'
+                typeSpeed={70}
+                deleteSpeed={20}
+                delaySpeed={500}
+              />
+            </p>
+            <Link className='button' to="#services">A propos</Link>
         </div>
       </div>
       <div className="copyright">

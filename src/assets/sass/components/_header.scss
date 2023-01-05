@@ -78,27 +78,27 @@
             font-weight:bold;
             text-transform: uppercase;
             letter-spacing: 3px;
-            font-size:2rem;
+            font-size:3.3rem;
             text-align: center;
             margin-bottom:1.5rem;
 
             @include for-big-desktop-up {
-                font-size:3rem;
+                font-size:4rem;
             }
 
             @include for-tablet-up(max-width) {
-                font-size:1.5rem;
+                font-size:2.5rem;
             }
 
             @include for-phone-only {
-                font-size:0.8rem;
+                font-size:1.7rem;
             }
         }
         
         .app__hero-paragraph{
             margin-bottom:2.75rem;
             font-weight: 100;
-            font-size:0.7rem;
+            font-size:1.1rem;
 
             div h1 {
                 text-align: center;
@@ -108,7 +108,7 @@
                 margin-bottom:2rem;
             }
             @include for-tablet-up(max-width) {
-                font-size:0.7rem;
+                font-size:0.9rem;
             }
 
             @include for-big-desktop-up {
@@ -116,7 +116,7 @@
             }
 
             @include for-phone-only {
-                font-size:0.5rem;
+                font-size:0.6rem;
             }
         }
     }

@@ -23,6 +23,9 @@ module.exports = {
     siteUrl: siteUrl,
     image: `src/assets/images/favicon.png`
   },
+  flags: {
+    DEV_SSR: true
+  },
   plugins: [
     "gatsby-plugin-netlify-cms", 
     "gatsby-plugin-sass", 
