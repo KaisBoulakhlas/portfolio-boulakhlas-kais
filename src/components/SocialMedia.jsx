@@ -5,7 +5,7 @@ import { FaFacebookF } from 'react-icons/fa'
 const SocialMedia = () => {
   return (
     <div className="app__social">
-       <a href="#" title="Linkedin" target="_blank" rel="noreferrer">
+       <a href="https://fr.linkedin.com/in/kais-boulakhlas-135041155" title="Linkedin" target="_blank" rel="noreferrer">
             <BsLinkedin />
         </a>
         <a href="https://github.com/KaisBoulakhlas" title="Github" target="_blank" rel="noreferrer">
