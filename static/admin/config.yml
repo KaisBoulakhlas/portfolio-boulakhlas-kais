@@ -62,11 +62,12 @@ collections:
       - { label: 'End Date', name: 'enddate', widget: 'string'}
       - { label: "Color", name: "color", widget: "string" }
       - { label: "Type of file", name: "typeoffile", widget: "string" }
-      
+
   - name: "curriculumvitae"
     label: "CV"
     folder: "content/cv"
     create: true
-    slug: "{{title}}"
+    slug: "{{name}}"
     fields:
-      - { label: "CV PDF", name: "cvpdf", widget: "file" }
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Type of file", name: "typeoffile", widget: "string" }
