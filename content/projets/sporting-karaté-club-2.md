@@ -1,9 +1,11 @@
 ---
-title: Sporting Karaté Club
-description: Un site vitrine pour un club de karaté. Développé avec Gatsby JS.
-projectlink: https://sportingkarateclub.netlify.app
-codelink: https://github.com/KaisBoulakhlas/site-karate
-projectimage: ../../static/img/sportingkarate.png
+title: Portfolio
+description: Mon Portfolio développé avec le framework de React, générateur de
+  site statiques, GatsbyJS. Les données sont chargées du CMS headless Netlify
+  CMS grâce à GraphQL.
+projectlink: https://cerulean-blini-4e9733.netlify.app/
+codelink: "null"
+projectimage: ../../static/img/portfolio.png
 typeoffile: projet
 type:
   - Web
@@ -14,4 +16,7 @@ tags:
   - netlify
   - graphql
   - seo-friendly
+  - netlify-cms
+  - pwa
+  - scss
 ---
