@@ -4,7 +4,6 @@ import { AppWrap, MotionWrap } from '../wrapper';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import { useServicesData } from '../hooks/use-service';
 import { useEffect, useState } from 'react';
-import { FaDownload } from 'react-icons/fa';
 
 const About = () => {
   const servicesData = useServicesData();
@@ -21,8 +20,6 @@ const About = () => {
       </h2>
 
       <div id="services" className="app__profiles">
-        <a href="#" className="button" target="_blank" rel="noreferrer">Mon CV<FaDownload/></a>
-
         {
           services?.map((service, index) => (
             <motion.div

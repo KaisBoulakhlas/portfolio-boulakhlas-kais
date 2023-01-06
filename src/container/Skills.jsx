@@ -4,8 +4,11 @@ import { useCompetencesData } from '../hooks/use-competence';
 import { useState, useEffect } from 'react';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import { AppWrap, MotionWrap } from '../wrapper';
+import { useCvData } from '../hooks/use-file';
+import { FaDownload } from 'react-icons/fa';
 
 const Skills = () => {
+  const { name, cvpdf } = useCvData();
   const competencesData = useCompetencesData();
   const [competences, setCompetences] = useState([]);
 
@@ -17,6 +20,7 @@ const Skills = () => {
     <>
       <h2 className="head-text">Mes<span> Compétences</span></h2>
       <div id="compétences" className="app__skills-container">
+      <a href={cvpdf.publicURL} className="button" download="cv-boulakhlas-kais.pdf">{name} <FaDownload/></a>
       <motion.div className="app__skills-list">
           {
             competences?.map((competence) => (

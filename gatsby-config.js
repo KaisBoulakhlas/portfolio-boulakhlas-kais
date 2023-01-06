@@ -75,7 +75,14 @@ module.exports = {
         name: "experiences",
         path: `${__dirname}/content/experiences`,
       },
-    },  
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: "cv",
+        path: `${__dirname}/content/cv`
+      },
+    },
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
