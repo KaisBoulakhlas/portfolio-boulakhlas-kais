@@ -18,5 +18,4 @@ tags:
   - redux-toolkit
   - express
   - jwt
-  - google-auth
 ---
