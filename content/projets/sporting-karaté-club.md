@@ -1,8 +1,8 @@
 ---
 title: Sporting Karaté Club
 description: Un site vitrine pour un club de karaté. Développé avec Gatsby JS.
-  GatsbyJS est un générateur de sites statiques basé sur ReactJS, respectant les
-  derniers standards de la JAMstack.
+  GatsbyJS est un générateur de sites statiques basé sur ReactJS, respectant la
+  JAMstack.
 projectlink: https://sportingkarateclub.netlify.app
 codelink: "null"
 projectimage: ../../static/img/sportingkarate.png
