@@ -14,9 +14,7 @@ tags:
   - node
   - heroku
   - axios
-  - cloudinary
   - firebase
-  - react-query
   - scss
   - mysql
 ---
