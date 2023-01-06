@@ -1,6 +1,6 @@
 import * as React from "react"
 import { Navbar } from "../components"
-import { About, Footer, Skills, Header, Project, Experiences } from '../container' 
+import { About, Footer, Skills, Header, Project, Experiences, MiniFooter } from '../container' 
 import { Seo } from "../components/Seo"
 
 const IndexPage = () => {
@@ -13,6 +13,7 @@ const IndexPage = () => {
         <Skills />
         <Project />
         <Footer />
+        <MiniFooter/>
     </div>
   )
 }

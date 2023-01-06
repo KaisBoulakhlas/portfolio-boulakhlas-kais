@@ -54,7 +54,12 @@
     
             .app__skills-exp-item-tag {
                 left:auto;
-                right:5px;    
+                right:5px; 
+                
+                @include for-phone-only{
+                    left:5px;
+                    right:5px; 
+                }
             }
     
             .app__skills-exp-item-circle {
@@ -115,6 +120,11 @@
             letter-spacing:1px;
             left: 5px;
             text-transform: uppercase;
+
+            @include for-phone-only{
+                left:5px;
+                right:5px; 
+            }
         }
 
         .app__skills-exp-item-circle {

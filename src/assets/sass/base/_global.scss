@@ -255,8 +255,7 @@
 }
 
 @include for-phone-only{
-  .app__navigation,
-  .app__social {
+  .app__navigation,.app__social {
     display: none;
   }
 
