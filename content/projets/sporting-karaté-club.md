@@ -1,22 +1,19 @@
 ---
-title: Youtube Clone
-description: "Une application web reprenant quelques fonctionnalités de Youtube.
-  Développé en React/NodeJS et utilisant un state management: Redux."
-projectlink: "null"
-codelink: https://github.com/KaisBoulakhlas/youtube-clone
-projectimage: ../../static/img/youtube.png
+title: Sporting Karaté Club
+description: Un site vitrine pour un club de karaté. Développé avec Gatsby JS.
+  GatsbyJS est un générateur de sites statiques basé sur la librairie front-end
+  ReactJS, respectant les derniers standards de la JAMstack.
+projectlink: https://sportingkarateclub.netlify.app
+codelink: "null"
+projectimage: ../../static/img/sportingkarate.png
 typeoffile: projet
 type:
   - Web
   - Tous
 tags:
-  - node
+  - gatsby
   - react
-  - axios
-  - mongoose
-  - firebase
-  - redux-toolkit
-  - express
-  - jwt
-  - google-auth
+  - netlify
+  - graphql
+  - seo-friendly
 ---
