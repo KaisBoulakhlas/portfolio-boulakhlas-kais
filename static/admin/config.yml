@@ -22,21 +22,25 @@ collections:
       - { label: "Description", name: "description", widget: "text" }
       - { label: "Service image", name: "serviceimage", widget: "image" }
       - { label: "Type of file", name: "typeoffile", widget: "string" }
+  
+  - name: "services"
+    label: "Services"
+    folder: "content/services"
+    create: true
+    slug: "{{titre}}"
+    fields:
+      - { label: "Titre", name: "titre", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Service image", name: "serviceimage", widget: "image" }
+      - { label: "Type of file", name: "typeoffile", widget: "string" }
 
-  - name: "projets"
-    label: "Projets"
-    folder: "content/projets"
+  - name: "curriculumvitae"
+    label: "CV"
+    folder: "content/cv"
     create: true
     slug: "{{title}}"
     fields:
-      - { label: "Titre", name: "title", widget: "string" }
-      - { label: "Description", name: "description", widget: "text" }
-      - { label: "Project Link", name: "projectlink", widget: "string" }
-      - { label: "Code link", name: "codelink", widget: "string" }
-      - { label: "Project Image", name: "projectimage", widget: "image" }
-      - { label: "Type of file", name: "typeoffile", widget: "string" }
-      - { label: "Type", name: "type", widget: "list" }
-      - { label: "Tags", name: "tags", widget: "list" }
+      - { label: "CV PDF", name: "cvpdf", widget: "file" }
 
   - name: "competences"
     label: "Compétences"
