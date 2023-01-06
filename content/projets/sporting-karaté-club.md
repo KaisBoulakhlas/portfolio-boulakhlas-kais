@@ -1,18 +1,22 @@
 ---
-title: Sporting Karaté Club
-description: Un site vitrine pour un club de karaté. Développé avec Gatsby JS.
-projectlink: https://sportingkarateclub.netlify.app
-codelink: https://github.com/KaisBoulakhlas/site-karate
-projectimage: ../../static/img/sportingkarate.png
+title: Youtube Clone
+description: "Une application web reprenant quelques fonctionnalités de Youtube.
+  Développé en React/NodeJS et utilisant un state management: Redux."
+projectlink: "null"
+codelink: https://github.com/KaisBoulakhlas/youtube-clone
+projectimage: ../../static/img/youtube.png
 typeoffile: projet
 type:
-  - Mobile
-  - UI/UX
+  - Web
   - Tous
 tags:
-  - gatsby
+  - node
   - react
-  - netlify
-  - graphql
-  - seo-friendly
+  - axios
+  - mongoose
+  - firebase
+  - redux-toolkit
+  - express
+  - jwt
+  - google-auth
 ---
