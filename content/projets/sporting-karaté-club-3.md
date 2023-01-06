@@ -1,17 +1,22 @@
 ---
-title: Sporting Karaté Club
-description: Un site vitrine pour un club de karaté. Développé avec Gatsby JS.
-projectlink: https://sportingkarateclub.netlify.app
-codelink: https://github.com/KaisBoulakhlas/site-karate
-projectimage: ../../static/img/sportingkarate.png
+title: Social Media App
+description: Une application web qui reprend les principales fonctionnalités
+  d'un réseau social tel que Facebook. Développé en ReactJS/NodeJS avec MongoDB.
+projectlink: https://socialmediaapp.herokuapp.com/
+codelink: https://github.com/KaisBoulakhlas/social-media
+projectimage: ../../static/img/socialmedia.png
 typeoffile: projet
 type:
   - Web
   - Tous
 tags:
-  - gatsby
   - react
-  - netlify
-  - graphql
-  - seo-friendly
+  - node
+  - heroku
+  - axios
+  - cloudinary
+  - firebase
+  - react-query
+  - scss
+  - mongoose
 ---
