@@ -70,4 +70,5 @@ collections:
     slug: "{{name}}"
     fields:
       - { label: "Name", name: "name", widget: "string" }
+      - { label: "CV PDF", name: "cvpdf", widget: "file" }
       - { label: "Type of file", name: "typeoffile", widget: "string" }
