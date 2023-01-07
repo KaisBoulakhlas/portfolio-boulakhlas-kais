@@ -4,7 +4,7 @@ require("dotenv").config({
 
 const {
   NODE_ENV,
-  URL: NETLIFY_SITE_URL = 'https://cerulean-blini-4e9733.netlify.app/',
+  URL: NETLIFY_SITE_URL = 'https://kaisboulakhlas.com/',
   CONTEXT: NETLIFY_ENV = NODE_ENV,
 } = process.env
 const isNetlifyProduction = NETLIFY_ENV === 'production'
