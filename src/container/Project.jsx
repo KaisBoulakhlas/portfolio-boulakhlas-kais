@@ -33,7 +33,6 @@ const Project = () => {
     setFilterProject(projectsData);
   }, [projectsData]);
 
-  console.log(filterProject);
   return (
     <div>
       <h2 style={{ padding: "2rem 0" }} className='head-text'>

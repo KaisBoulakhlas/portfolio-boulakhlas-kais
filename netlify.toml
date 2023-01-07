@@ -54,6 +54,18 @@
       max-age=365000000,
       immutable'''
 
+[[redirects]]
+  from = "https://kaisboulakhlas.netlify.app"
+  to = "https://kaisboulakhlas.com"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://kaisboulakhlas.netlify.app/*"
+  to = "https://kaisboulakhlas.com/:splat"
+  status = 301
+  force = true
+
 # Asset optimization
 [build.processing]
   skip_processing = false
