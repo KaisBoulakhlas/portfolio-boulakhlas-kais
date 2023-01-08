@@ -24,6 +24,7 @@
     "gatsby-plugin-netlify-cms": "^7.0.0",
     "gatsby-plugin-offline": "^6.0.0",
     "gatsby-plugin-preconnect": "^1.4.0",
+    "gatsby-plugin-robots-txt": "^1.8.0",
     "gatsby-plugin-sass": "^6.0.0",
     "gatsby-plugin-sharp": "^5.0.0",
     "gatsby-plugin-sitemap": "^6.0.0",
@@ -40,7 +41,6 @@
     "react-simple-typewriter": "^5.0.1",
     "sass": "^1.56.1"
   },
-
   "browserslist": {
     "production": [
       ">0.2%",
