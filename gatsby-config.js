@@ -100,27 +100,25 @@ module.exports = {
       options: {
         output: `/sitemap.xml`,
         query: `{
-          site {
-            siteMetadata {
-              siteUrl
-            }
-          }
           allSitePage {
-            edges {
-              node {
-                path
-              }
+            nodes {
+              path
             }
           }
         }`,
-        serialize: ({ site, allSitePage }) => {
-          return allSitePage.edges.map(({ node }) => {
-            return {
-              url: site.siteMetadata.siteUrl + node.path,
-              changefreq: 'daily',
-              priority: 0.7,
-            };
-          });
+        resolveSiteUrl: () => siteUrl,
+        resolvePages: ({
+          allSitePage: { nodes: allPages },
+        }) => {
+          return allPages.map(page => {
+            return { ...page }
+          })
+        },
+        serialize: ({ path, modifiedGmt }) => {
+          return {
+            url: path,
+            lastmod: modifiedGmt,
+          }
         },
       },
     },
