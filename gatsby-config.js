@@ -111,7 +111,7 @@ module.exports = {
           allSitePage: { nodes: allPages },
         }) => {
           return allPages.map(page => {
-            return { ...page }
+            return page
           })
         },
         serialize: ({ path, modifiedGmt }) => {
