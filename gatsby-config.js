@@ -106,28 +106,20 @@ module.exports = {
             }
           }
           allSitePage {
-            nodes {
-              path
-            }
-          }
-        }`,
-        resolveSiteUrl: ({ site: { siteMetadata: { url } } }) => url,
-        resolvePages: ({ allSitePage: { nodes } }) => {
-
-          const pages = nodes.map(node  => {
-              return {
-                  path: `${node.path}`,
+            edges {
+              node {
+                path
               }
-          })
- 
-          return [...pages]
-      },
-        serialize: ({ path }) => {
-          return {
-            url: site.siteMetadata.siteUrl + path,
-            changefreq: `daily`,
-            priority: 0.7,
-        }
+            }
+        }`,
+        serialize: ({ site, allSitePage }) => {
+          return allSitePage.edges.map(({ node }) => {
+            return {
+              url: site.siteMetadata.siteUrl + node.path,
+              changefreq: 'daily',
+              priority: 0.7,
+            };
+          });
         },
       },
     },
