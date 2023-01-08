@@ -4,7 +4,7 @@ require("dotenv").config({
 
 const {
   NODE_ENV,
-  URL: NETLIFY_SITE_URL = 'https://www.example.com',
+  URL: NETLIFY_SITE_URL = 'https://kaisboulakhlas.com',
   DEPLOY_PRIME_URL: NETLIFY_DEPLOY_URL = NETLIFY_SITE_URL,
   CONTEXT: NETLIFY_ENV = NODE_ENV
 } = process.env;
@@ -85,12 +85,16 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-google-analytics',
+      resolve: `gatsby-plugin-google-gtag`,
       options: {
-        "trackingId": `${process.env.GA_ID}`,
-        "head": true
-      }
-    }, 
+        trackingIds: [
+          `${process.env.GA_ID}`
+        ],
+        pluginConfig: {
+          head: true,
+        },
+      },
+    },
     "gatsby-plugin-sitemap",
     {
       resolve: 'gatsby-plugin-robots-txt',
