@@ -98,6 +98,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-sitemap`,
       options: {
+        output: `/sitemap.xml`,
         query: `{
           site {
             siteMetadata {
@@ -105,23 +106,28 @@ module.exports = {
             }
           }
           allSitePage {
-            edges {
-              node {
-                path
-              }
+            nodes {
+              path
             }
           }
         }`,
-        serialize: ({ site, allSitePage }) => {
-          let pages = []
-          allSitePage.edges.map(edge => {
-            pages.push({
-              url: site.siteMetadata.siteUrl + edge.node.path,
-              changefreq: `daily`,
-              priority: 0.7,
-            })
+        resolveSiteUrl: ({ site: { siteMetadata: { url } } }) => url,
+        resolvePages: ({ allSitePage: { nodes } }) => {
+
+          const pages = nodes.map(node  => {
+              return {
+                  path: `${node.path}`,
+              }
           })
-          return pages
+ 
+          return [...pages]
+      },
+        serialize: ({ path }) => {
+          return {
+            url: site.siteMetadata.siteUrl + path,
+            changefreq: `daily`,
+            priority: 0.7,
+        }
         },
       },
     },
