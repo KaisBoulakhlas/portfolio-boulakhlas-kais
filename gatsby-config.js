@@ -98,6 +98,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-sitemap`,
       options: {
+        createLinkInHead:true,
         query: `{
           allSitePage {
             nodes {
