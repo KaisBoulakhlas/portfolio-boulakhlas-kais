@@ -111,6 +111,7 @@ module.exports = {
                 path
               }
             }
+          }
         }`,
         serialize: ({ site, allSitePage }) => {
           return allSitePage.edges.map(({ node }) => {
