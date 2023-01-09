@@ -98,7 +98,6 @@ module.exports = {
     {
       resolve: `gatsby-plugin-sitemap`,
       options: {
-        createLinkInHead:true,
         query: `{
           allSitePage {
             nodes {
@@ -114,10 +113,10 @@ module.exports = {
             return page
           })
         },
-        serialize: ({ path, modifiedGmt }) => {
+        serialize: ({ path, lastmod }) => {
           return {
-            url: path,
-            lastmod: modifiedGmt,
+            url: siteUrl + path,
+            lastmod,
           }
         },
       },
