@@ -71,7 +71,7 @@ const Project = () => {
                   >
                     {
                       project.frontmatter.projectlink !== "null" && (
-                        <a href={project.frontmatter.projectlink} target="_blank" rel="noreferrer">
+                        <a href={project.frontmatter.projectlink} aria-label={item.title} title={item.title} target="_blank" rel="noreferrer">
                           <motion.div
                             whileInView={{ scale: [0, 1] }}
                             whileHover={{ scale: [1, 0.90] }}
@@ -86,7 +86,7 @@ const Project = () => {
 
                     {
                       project.frontmatter.codelink !== "null" && (
-                        <a href={project.frontmatter.codelink} target="_blank" rel="noreferrer">
+                        <a href={project.frontmatter.codelink} aria-label={`Github ${item.title}`} title={`Github ${item.title}`}  target="_blank" rel="noreferrer">
                           <motion.div
                             whileInView={{ scale: [0, 1] }}
                             whileHover={{ scale: [1, 0.90] }}
