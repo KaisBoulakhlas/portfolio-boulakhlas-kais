@@ -34,7 +34,7 @@ const Navbar = () => {
                 {
                     menu?.map((item) => (
                         <li className="app__flex p-text" key={`link-${item}`}>
-                            <LinkScroll activeClass="active" spy={true}  to={item} offset={-30}>{item}<div/></LinkScroll>
+                            <LinkScroll activeClass="active" spy={true}  to={item} href={`#${item}`} offset={-30}>{item}<div/></LinkScroll>
                         </li>   
                     ))
                 }
