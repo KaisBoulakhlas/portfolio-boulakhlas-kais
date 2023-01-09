@@ -97,6 +97,10 @@
       outline: none;
       transition: all 0.3s ease-in-out;
 
+      &::placeholder {
+        color: black;
+      }
+      
       &:hover {
         box-shadow: 0 0 25px $primary-color;
       }
