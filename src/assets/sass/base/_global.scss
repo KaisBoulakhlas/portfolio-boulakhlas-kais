@@ -9,6 +9,24 @@
   scroll-behavior: smooth;
 }
 
+html::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: white;
+}
+
+html::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: #F5F5F5;
+}
+
+html::-webkit-scrollbar-thumb
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: $secondary-color;
+}
+
 .app {
   background-color: $primary-color;
 }
@@ -323,4 +341,20 @@ input[type="checkbox"] {
 
 .disable {
   cursor:not-allowed;
+}
+
+
+@include for-phone-only {
+  .CookieConsent {
+    text-align: center;
+    justify-content: center !important;
+  }
+}
+
+@include for-normal-desktop-up(max-width){
+  .CookieConsent {
+    div{
+      margin: auto;
+    }
+  }
 }

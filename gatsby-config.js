@@ -135,6 +135,18 @@ module.exports = {
         domains: ['https://www.gstatic.com'],
       },
     },
+    {
+      resolve: `gatsby-plugin-gdpr-cookies`,
+      options: {
+        googleAnalytics: {
+          trackingId: `${process.env.GA_ID}`, 
+          cookieName: 'gatsby-gdpr-google-analytics', 
+          anonymize: true, 
+          allowAdFeatures: false 
+        },
+        environments: ['production']
+      },
+    },
     'gatsby-plugin-offline', 
     'gatsby-plugin-netlify'
   ],
