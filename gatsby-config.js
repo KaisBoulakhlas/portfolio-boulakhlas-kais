@@ -113,10 +113,9 @@ module.exports = {
             return { ...page }
           })
         },
-        serialize: ({ path, lastmod }) => {
+        serialize: ({ path }) => {
           return {
             url: siteUrl + path,
-            lastmod,
           }
         },
       },
