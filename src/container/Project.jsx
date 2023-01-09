@@ -5,11 +5,9 @@ import { AppWrap, MotionWrap } from '../wrapper'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import { useState, useEffect } from 'react'
 import { useProjectsData } from '../hooks/use-project'
-import { useNav } from '../hooks/use-nav';
 
 const Project = () => {
   const projectsData = useProjectsData();
-  const projectsRef = useNav("projets");
   const [projects, setProjects] = useState([]);
   const [activeFilter, setActiveFilter] = useState('Tous');
   const [filterProject, setFilterProject] = useState([]);
@@ -36,85 +34,86 @@ const Project = () => {
   }, [projectsData]);
 
   return (
-    <div ref={projectsRef}>
-      <h2 style={{ padding: "2rem 0" }} className='head-text'>
-        Mes différents<span> Projets</span>
-      </h2>
-      <div id="projets" className="app__project-filter">
-        {
-          types?.map((item, index) => (
-            <button
-              key={index}
-              onClick={() => handleprojectFilter(item)}
-              className={`app__project-filter-item app__flex p-text ${activeFilter === item ? 'item-active' : ''}`}
-            >
-              {item}
-            </button>
-          ))
-        }
-      </div>
-      <motion.div
-        animate={animateCard}
-        transition={{ duration: 0.5, delayChildren: 0.5 }}
-        className="app__project-portfolio"
-      >
-        {
-          filterProject?.map((project, index) => (
-            <div className="app__project-item app__flex"  key={index}>
-              <div
-                className="app__project-img app__flex"
+      <div>
+        <h2  style={{ padding: "2rem 0" }} className='head-text'>
+          Mes différents<span> Projets</span>
+        </h2>
+  
+        <div className="app__project-filter">
+          {
+            types?.map((item, index) => (
+              <button
+                key={index}
+                onClick={() => handleprojectFilter(item)}
+                className={`app__project-filter-item app__flex p-text ${activeFilter === item ? 'item-active' : ''}`}
               >
-                <GatsbyImage style={{ height: "100%" }} image={getImage(project.frontmatter.projectimage.childImageSharp.gatsbyImageData)} alt={project.frontmatter.title} />
-                <motion.div
-                  whileHover={{ opacity: [0, 1] }}
-                  transition={{ duration: 0.25, ease: 'easeInOut', staggerChildren: 0.5 }}
-                  className="app__project-hover app__flex"
+                {item}
+              </button>
+            ))
+          }
+        </div>
+        <motion.div
+          animate={animateCard}
+          transition={{ duration: 0.5, delayChildren: 0.5 }}
+          className="app__project-portfolio"
+        >
+          {
+            filterProject?.map((project, index) => (
+              <div className="app__project-item app__flex"  key={index}>
+                <div
+                  className="app__project-img app__flex"
                 >
-                  {
-                    project.frontmatter.projectlink !== "null" && (
-                      <a href={project.frontmatter.projectlink} target="_blank" rel="noreferrer">
-                        <motion.div
-                          whileInView={{ scale: [0, 1] }}
-                          whileHover={{ scale: [1, 0.90] }}
-                          transition={{ duration: 0.25 }}
-                          className="app__flex"
-                        >
-                          <AiFillEye />
-                        </motion.div>
-                      </a>
-                    )
-                  }
+                  <GatsbyImage style={{ height: "100%" }} image={getImage(project.frontmatter.projectimage.childImageSharp.gatsbyImageData)} alt={project.frontmatter.title} />
+                  <motion.div
+                    whileHover={{ opacity: [0, 1] }}
+                    transition={{ duration: 0.25, ease: 'easeInOut', staggerChildren: 0.5 }}
+                    className="app__project-hover app__flex"
+                  >
+                    {
+                      project.frontmatter.projectlink !== "null" && (
+                        <a href={project.frontmatter.projectlink} target="_blank" rel="noreferrer">
+                          <motion.div
+                            whileInView={{ scale: [0, 1] }}
+                            whileHover={{ scale: [1, 0.90] }}
+                            transition={{ duration: 0.25 }}
+                            className="app__flex"
+                          >
+                            <AiFillEye />
+                          </motion.div>
+                        </a>
+                      )
+                    }
 
-                  {
-                    project.frontmatter.codelink !== "null" && (
-                      <a href={project.frontmatter.codelink} target="_blank" rel="noreferrer">
-                        <motion.div
-                          whileInView={{ scale: [0, 1] }}
-                          whileHover={{ scale: [1, 0.90] }}
-                          transition={{ duration: 0.25 }}
-                          className="app__flex"
-                        >
-                          <AiFillGithub />
-                        </motion.div>
-                      </a>
-                    )
-                  }
-                </motion.div>
-              </div>
+                    {
+                      project.frontmatter.codelink !== "null" && (
+                        <a href={project.frontmatter.codelink} target="_blank" rel="noreferrer">
+                          <motion.div
+                            whileInView={{ scale: [0, 1] }}
+                            whileHover={{ scale: [1, 0.90] }}
+                            transition={{ duration: 0.25 }}
+                            className="app__flex"
+                          >
+                            <AiFillGithub />
+                          </motion.div>
+                        </a>
+                      )
+                    }
+                  </motion.div>
+                </div>
 
-              <div className="app__project-content app__flex">
-                <span className="bold-text">{project.frontmatter.title}</span>
-                <p className="p-text" style={{ marginTop: 10 }}>{project.frontmatter.description}</p>
+                <div className="app__project-content app__flex">
+                  <span className="bold-text">{project.frontmatter.title}</span>
+                  <p className="p-text" style={{ marginTop: 10 }}>{project.frontmatter.description}</p>
 
-                <div className="app__project-tag app__flex">
-                  <p className="p-text" style={{ textAlign: 'center', color: "#f68338" }}>#{project.frontmatter.tags.join(' #')}</p>
+                  <div className="app__project-tag app__flex">
+                    <p className="p-text" style={{ textAlign: 'center', color: "#f68338" }}>#{project.frontmatter.tags.join(' #')}</p>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))
-        }
-      </motion.div>
-    </div>
+            ))
+          }
+        </motion.div>
+      </div>     
   )
 }
 

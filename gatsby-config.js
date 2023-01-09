@@ -120,7 +120,15 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        "icon": "src/assets/images/favicon.png"
+        name: `Portfolio - Boulakhlas Kaïs`,
+        short_name: `BK Portfolio`,
+        description: siteMetadata.descriptionMeta,
+        start_url: `/`,
+        background_color: `#000000`,
+        theme_color: `#fff`,
+        display: `standalone`,
+        crossOrigin: `use-credentials`,
+        icon: "src/assets/images/favicon.png"
       }
     },
     {

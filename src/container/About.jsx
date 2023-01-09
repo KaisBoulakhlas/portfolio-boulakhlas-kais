@@ -4,11 +4,9 @@ import { AppWrap, MotionWrap } from '../wrapper';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import { useServicesData } from '../hooks/use-service';
 import { useEffect, useState } from 'react';
-import { useNav } from '../hooks/use-nav';
 
 const About = () => {
   const servicesData = useServicesData();
-  const aboutRef = useNav("services");
   const [services, setServices] = useState([]);
 
   useEffect(() => {
@@ -21,7 +19,7 @@ const About = () => {
         Mes <span>Services</span>
       </h2>
 
-      <div id="services" ref={aboutRef} className="app__profiles">
+      <div className="app__profiles">
         {
           services?.map((service, index) => (
             <motion.div

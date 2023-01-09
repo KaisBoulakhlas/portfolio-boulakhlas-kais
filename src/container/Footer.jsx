@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Recaptcha from 'react-google-recaptcha';
 import { images } from '../constants';
-import { useNav } from '../hooks/use-nav';
 import { AppWrap, MotionWrap } from '../wrapper';
 
 const RECAPTCHA_KEY = process.env.GATSBY_APP_SITE_RECAPTCHA_KEY;
@@ -19,10 +18,9 @@ const Footer = () => {
   const [errorCaptcha, setErrorCaptcha] = useState(false);
   const [disabled, setDisabled] = useState(true);
   const recaptchaRef = React.createRef();
-  const refFooter = useNav("contact");
 
   const { username, email, message } = formData;
-  
+
   const handleChangeInput = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
@@ -33,7 +31,7 @@ const Footer = () => {
     setLoading(true);
     const form = e.target
     const recaptchaValue = recaptchaRef.current.getValue();
-    if(recaptchaValue === "") {
+    if (recaptchaValue === "") {
       setFormData({ username: '', email: '', message: '' });
       setErrorCaptcha(true);
       return;
@@ -48,18 +46,18 @@ const Footer = () => {
         ...formData,
       }),
     })
-    .then(() => {
-      setLoading(false);
-      setIsFormSubmitted(true);
-    })
-    .catch((error) => alert(error))
+      .then(() => {
+        setLoading(false);
+        setIsFormSubmitted(true);
+      })
+      .catch((error) => alert(error))
   };
 
   return (
     <>
       <h2 className="head-text">Vous pouvez <span>me contacter ici</span></h2>
 
-      <div id="contact" ref={refFooter} className="app__footer-cards">
+      <div className="app__footer-cards">
         <div className="app__footer-card ">
           <img src={images.email} alt="email" />
           <a href="mailto:kaisboulakhlas9@gmail.com" className="p-text">kaisboulakhlas9@gmail.com</a>
@@ -70,11 +68,11 @@ const Footer = () => {
         </div>
       </div>
       {!isFormSubmitted ? (
-        <form method="post" onSubmit={handleSubmit} data-netlify="true" data-netlify-recaptcha="true" netlify-honeypot="bot-field" name="contact-form" id="contact-form" className="app__footer-form app__flex">
+        <htmlForm method="post" onSubmit={handleSubmit} data-netlify="true" data-netlify-recaptcha="true" netlify-honeypot="bot-field" name="contact-form" id="contact-form" className="app__footer-form app__flex">
           <input type="hidden" name="form-name" value="contact-form" />
           <p hidden>
             <label htmlFor="bot-field">
-                Don’t fill this out: <input name="bot-field" onChange={handleChangeInput} />
+              Don’t fill this out: <input name="bot-field" onChange={handleChangeInput} />
             </label>
           </p>
           {
@@ -87,23 +85,30 @@ const Footer = () => {
             )
           }
           <div className="app__flex">
-            <input className="p-text" type="text" placeholder="Nom*" name="username" value={username || ""} onChange={handleChangeInput} required />
+            <label htmlFor="username">
+              <input className="p-text" type="text" id="username" placeholder="Nom*" name="username" value={username || ""} onChange={handleChangeInput} required />
+            </label>
           </div>
           <div className="app__flex">
-            <input className="p-text" type="email" placeholder="Email*" name="email" value={email || ""} onChange={handleChangeInput} required />
+            <label htmlFor="email">
+              <input className="p-text" type="email" id="email" placeholder="Email*" name="email" value={email || ""} onChange={handleChangeInput} required />
+            </label>
           </div>
           <div>
-            <textarea
-              className="p-text"
-              placeholder="Message*"
-              value={message || ""}
-              name="message"
-              required
-              onChange={handleChangeInput}
-            />
+            <label htmlFor="message">
+              <textarea
+                className="p-text"
+                placeholder="Message*"
+                value={message || ""}
+                name="message"
+                id="message"
+                required
+                onChange={handleChangeInput}
+              />
+            </label>
           </div>
           <section className="app__flex">
-            <input type="checkbox" required/><small>J'ai lu et je suis d'accord avec la politique de confidentialité et les mentions légales de ce site.</small>
+            <input type="checkbox" required /><small>J'ai lu et je suis d'accord avec la politique de confidentialité et les mentions légales de ce site.</small>
           </section>
           <Recaptcha
             ref={recaptchaRef}
@@ -112,8 +117,8 @@ const Footer = () => {
             id="recaptcha-google"
             onChange={() => setDisabled(false)}
           />
-          <button type="submit" disabled={disabled} className={ disabled ? "button disable" : "button" }>{loading && recaptchaRef.current !== null ? 'Envoi...' : 'Envoyer'}</button>
-        </form>
+          <button type="submit" disabled={disabled} className={disabled ? "button disable" : "button"}>{loading && recaptchaRef.current !== null ? 'Envoi...' : 'Envoyer'}</button>
+        </htmlForm>
       ) : (
         <div>
           <h3 className="response">

@@ -4,12 +4,10 @@ import Banner from '../assets/videos/Banner.mp4'
 import { useMetaData } from '../hooks/use-meta-data'
 import { AppWrap } from '../wrapper'
 import { Typewriter } from 'react-simple-typewriter'
-import { useNav } from '../hooks/use-nav'
 
 const Header = () => {
   const siteMetaData = useMetaData();
   const refDesc = useRef(null);
-  const refHeader = useNav("accueil");
 
   const handleDone = () => {
     const pointer = refDesc.current.childNodes[1];
@@ -29,7 +27,7 @@ const Header = () => {
   
     
   return (
-    <div id="accueil" ref={refHeader} className='app__hero'>
+    <div className='app__hero'>
       <div className='app__hero-background'>
         <video src={Banner} type="video/mp4" autoPlay loop muted playsInline className='app__hero-video'></video>
       </div>
