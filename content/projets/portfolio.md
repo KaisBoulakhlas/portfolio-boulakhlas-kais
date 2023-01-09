@@ -13,9 +13,6 @@ type:
 tags:
   - gatsby
   - react
-  - netlify
-  - graphql
-  - seo-friendly
   - netlify-cms
   - pwa
   - scss

@@ -13,9 +13,6 @@ type:
 tags:
   - vue
   - laravel
-  - vuex
-  - api
   - tailwind
   - mysql
-  - axios
 ---

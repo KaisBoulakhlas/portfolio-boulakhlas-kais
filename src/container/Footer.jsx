@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Recaptcha from 'react-google-recaptcha';
 import { images } from '../constants';
+import { useNav } from '../hooks/use-nav';
 import { AppWrap, MotionWrap } from '../wrapper';
 
 const RECAPTCHA_KEY = process.env.GATSBY_APP_SITE_RECAPTCHA_KEY;
@@ -18,6 +19,7 @@ const Footer = () => {
   const [errorCaptcha, setErrorCaptcha] = useState(false);
   const [disabled, setDisabled] = useState(true);
   const recaptchaRef = React.createRef();
+  const refFooter = useNav("contact");
 
   const { username, email, message } = formData;
   
@@ -57,7 +59,7 @@ const Footer = () => {
     <>
       <h2 className="head-text">Vous pouvez <span>me contacter ici</span></h2>
 
-      <div id="contact" className="app__footer-cards">
+      <div id="contact" ref={refFooter} className="app__footer-cards">
         <div className="app__footer-card ">
           <img src={images.email} alt="email" />
           <a href="mailto:kaisboulakhlas9@gmail.com" className="p-text">kaisboulakhlas9@gmail.com</a>

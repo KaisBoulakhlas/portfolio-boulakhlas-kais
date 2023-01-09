@@ -6,9 +6,11 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import { AppWrap, MotionWrap } from '../wrapper';
 import { useCvData } from '../hooks/use-file';
 import { FaDownload } from 'react-icons/fa';
+import { useNav } from '../hooks/use-nav';
 
 const Skills = () => {
   const { name, cvpdf } = useCvData();
+  const refSkills = useNav("compétences");
   const competencesData = useCompetencesData();
   const [competences, setCompetences] = useState([]);
 
@@ -19,7 +21,7 @@ const Skills = () => {
   return (
     <>
       <h2 className="head-text">Mes<span> Compétences</span></h2>
-      <div id="compétences" className="app__skills-container">
+      <div id="compétences" ref={refSkills} className="app__skills-container">
       <a href={cvpdf.publicURL} className="button" download="cv-boulakhlas-kais.pdf">{name} <FaDownload/></a>
       <motion.div className="app__skills-list">
           {

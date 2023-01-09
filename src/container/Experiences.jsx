@@ -2,9 +2,11 @@ import React, { useEffect, useState } from 'react'
 import { useExperiencesData } from '../hooks/use-experience';
 import { motion } from 'framer-motion';
 import { AppWrap, MotionWrap } from '../wrapper';
+import { useNav } from '../hooks/use-nav';
 
 const Experiences = () => {
   const experiencesData = useExperiencesData();
+  const refExp = useNav("expériences");
   const [experiences, setExperiences] = useState([]);
 
   useEffect(() => {
@@ -16,7 +18,7 @@ const Experiences = () => {
         <h2 style={{ padding: "2rem" }} className='head-text'>
             Mes<span> Expériences</span>
         </h2>
-        <div id="expériences" className="app__skills-exp">
+        <div id="expériences" ref={refExp} className="app__skills-exp">
         {
         experiences?.sort((a, b) => b.frontmatter.id - a.frontmatter.id).map((experience, index) => (
             <motion.div key={index} className='app__skills-exp-item'>

@@ -59,7 +59,7 @@ html::-webkit-scrollbar-thumb
   flex-direction: column;
 
   @include for-phone-only {
-    padding: 4rem 1rem 2rem;
+    padding: 0 1rem 2rem;
   }
 }
 
@@ -273,6 +273,7 @@ html::-webkit-scrollbar-thumb
     @include for-big-desktop-up {
       width: 20px;
       height: 20px;
+      margin: 0.8rem;
     }
   }
 }

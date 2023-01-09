@@ -5,9 +5,11 @@ import { AppWrap, MotionWrap } from '../wrapper'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import { useState, useEffect } from 'react'
 import { useProjectsData } from '../hooks/use-project'
+import { useNav } from '../hooks/use-nav';
 
 const Project = () => {
   const projectsData = useProjectsData();
+  const projectsRef = useNav("projets");
   const [projects, setProjects] = useState([]);
   const [activeFilter, setActiveFilter] = useState('Tous');
   const [filterProject, setFilterProject] = useState([]);
@@ -34,7 +36,7 @@ const Project = () => {
   }, [projectsData]);
 
   return (
-    <div>
+    <div ref={projectsRef}>
       <h2 style={{ padding: "2rem 0" }} className='head-text'>
         Mes différents<span> Projets</span>
       </h2>
@@ -58,7 +60,7 @@ const Project = () => {
       >
         {
           filterProject?.map((project, index) => (
-            <div className="app__project-item app__flex" key={index}>
+            <div className="app__project-item app__flex"  key={index}>
               <div
                 className="app__project-img app__flex"
               >
@@ -101,7 +103,7 @@ const Project = () => {
               </div>
 
               <div className="app__project-content app__flex">
-                <h4 className="bold-text">{project.frontmatter.title}</h4>
+                <span className="bold-text">{project.frontmatter.title}</span>
                 <p className="p-text" style={{ marginTop: 10 }}>{project.frontmatter.description}</p>
 
                 <div className="app__project-tag app__flex">

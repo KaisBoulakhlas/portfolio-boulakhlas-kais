@@ -12,10 +12,7 @@ type:
 tags:
   - node
   - react
-  - axios
-  - mongoose
+  - mongodb
   - firebase
   - redux-toolkit
-  - express
-  - jwt
 ---

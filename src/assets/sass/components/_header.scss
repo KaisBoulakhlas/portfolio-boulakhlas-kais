@@ -83,7 +83,7 @@
             margin-bottom:1.5rem;
 
             @include for-big-desktop-up {
-                font-size:4rem;
+                font-size:6rem;
             }
 
             @include for-tablet-up(max-width) {
@@ -99,10 +99,6 @@
             margin-bottom:2.75rem;
             font-weight: 100;
             font-size:1.1rem;
-
-            div h1 {
-                text-align: center;
-            }
 
             @include for-tablet-up(min-width) {
                 margin-bottom:2rem;

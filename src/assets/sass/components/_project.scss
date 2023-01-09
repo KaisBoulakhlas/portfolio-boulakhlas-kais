@@ -10,6 +10,10 @@
     @include for-phone-only {
       width: 100%;
     }
+
+    @include for-big-desktop-up {
+      padding: 1rem;
+    }
   }
   
   .app__project-filter {
@@ -69,13 +73,13 @@
       }
       
       @include for-big-desktop-up {
-        width: 470px;
+        width: 600px;
         padding: 1.25rem;
         border-radius: 0.75rem;
       }
       
       @include for-phone-only{
-          width: 80%;
+          width: 85%;
           margin: 1rem;
       }
     }
@@ -143,7 +147,7 @@
     position: relative;
     flex-direction: column;
   
-    h4 {
+    span {
       margin-top: 1rem;
       line-height: 1.5;
 
@@ -163,6 +167,7 @@
       padding: 0.5rem 1rem;
       border-radius: 10px;
       background-color: #fff;
+      width:100%;
       top: -25px;
     }
   }

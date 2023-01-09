@@ -13,7 +13,6 @@ type:
 tags:
   - symfony
   - php
-  - vanillajs
-  - typescript
+  - javascript
   - twig
 ---

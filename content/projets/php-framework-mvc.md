@@ -14,5 +14,4 @@ tags:
   - mvc
   - composer
   - docker
-  - ""
 ---

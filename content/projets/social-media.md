@@ -12,8 +12,6 @@ type:
 tags:
   - react
   - node
-  - heroku
-  - axios
   - firebase
   - scss
   - mysql
