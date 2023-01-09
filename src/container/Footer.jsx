@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Recaptcha from 'react-google-recaptcha';
 import { images } from '../constants';
 import { AppWrap, MotionWrap } from '../wrapper';
@@ -14,7 +14,6 @@ function encode(data) {
 const Footer = () => {
   const [formData, setFormData] = useState({ username: '', email: '', message: '' });
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
-  const [showCaptcha, setShowCaptcha] = useState(false);
   const [loading, setLoading] = useState(false);
   const [errorCaptcha, setErrorCaptcha] = useState(false);
   const [disabled, setDisabled] = useState(true);
@@ -54,12 +53,6 @@ const Footer = () => {
       .catch((error) => alert(error))
   };
 
-  useEffect(() => {
-    if(window.scrollY >= 2500){
-      setShowCaptcha(true);
-    }
-  }, [])
-  
   return (
     <>
       <h2 style={{ padding: "3rem 0" }}  className="head-text">Vous pouvez <span>me contacter ici</span></h2>
@@ -116,17 +109,13 @@ const Footer = () => {
           <label className="app__flex">
             <input type="checkbox" required /><small>J'ai lu et je suis d'accord avec la politique de confidentialité et les mentions légales de ce site.</small>
           </label>
-          {
-            showCaptcha && (
-              <Recaptcha
-                ref={recaptchaRef}
-                sitekey={RECAPTCHA_KEY}
-                size="normal"
-                id="recaptcha-google"
-                onChange={() => setDisabled(false)}
-              />
-            )
-          }
+          <Recaptcha
+            ref={recaptchaRef}
+            sitekey={RECAPTCHA_KEY}
+            size="normal"
+            id="recaptcha-google"
+            onChange={() => setDisabled(false)}
+          />
           <button type="submit" disabled={disabled} className={disabled ? "button disable" : "button"}>{loading && recaptchaRef.current !== null ? 'Envoi...' : 'Envoyer'}</button>
         </form>
       ) : (
