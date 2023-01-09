@@ -17,8 +17,8 @@ const Layout = ({ children }) => {
         }}
         location="bottom"
         style={{ background: "rgb(15, 21, 21)" }}
-        buttonStyle={{ color:"white", textTransform:"uppercase", background:"limegreen" }}
-        declineButtonStyle={{ color:"white", textTransform:"uppercase" }}
+        buttonStyle={{ textTransform:"uppercase", background:"limegreen" }}
+        declineButtonStyle={{ textTransform:"uppercase" }}
         buttonText="Accepter"
         declineButtonText="Refuser"
         cookieName="gatsby-gdpr-google-analytics"> 
