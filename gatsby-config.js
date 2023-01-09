@@ -10,14 +10,12 @@ const {
 } = process.env;
 const isNetlifyProduction = NETLIFY_ENV === 'production';
 const siteUrl = isNetlifyProduction ? NETLIFY_SITE_URL : NETLIFY_DEPLOY_URL;
+const description = "Kaïs Boulakhlas, développeur web qui apprend tous les jours. Ce site est un portfolio montrant mes différentes compétences et expériences ainsi que mes différents projets dans l'informatique. Je propose mes services tels que le développement de sites web/applications web et plus...";
 
 module.exports = {
   siteMetadata: {
     title: `Boulakhlas Kaïs`,
-    descriptionMeta:`Kaïs Boulakhlas, développeur web qui apprend tous les jours. 
-    Ce site est un portfolio montrant mes différentes compétences et 
-    expériences ainsi que mes différents projets dans l'informatique. 
-    Je propose mes services tels que le développement de sites web/applications web et plus...`,
+    descriptionMeta:description,
     description: `Développeur web qui apprend tous les jours`,
     author: `@kaisboulakhlas`,
     keywords: `kaïs boulakhlas, développeur web, portfolio, projets, expériences, compétences, services`,
@@ -122,7 +120,7 @@ module.exports = {
       options: {
         name: `Portfolio - Boulakhlas Kaïs`,
         short_name: `BK Portfolio`,
-        description: siteMetadata.descriptionMeta,
+        description: description,
         start_url: `/`,
         background_color: `#000000`,
         theme_color: `#fff`,
