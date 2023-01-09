@@ -2,7 +2,8 @@
     flex: 1;
     width: 100%;
     flex-direction: column;
-
+    padding:3rem 0;
+    
     @include for-big-desktop-up {
         padding: 4rem;
     }

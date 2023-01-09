@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Recaptcha from 'react-google-recaptcha';
 import { images } from '../constants';
 import { AppWrap, MotionWrap } from '../wrapper';
@@ -14,6 +14,7 @@ function encode(data) {
 const Footer = () => {
   const [formData, setFormData] = useState({ username: '', email: '', message: '' });
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
+  const [showCaptcha, setShowCaptcha] = useState(false);
   const [loading, setLoading] = useState(false);
   const [errorCaptcha, setErrorCaptcha] = useState(false);
   const [disabled, setDisabled] = useState(true);
@@ -53,10 +54,15 @@ const Footer = () => {
       .catch((error) => alert(error))
   };
 
+  useEffect(() => {
+    if(window.scrollY >= 2500){
+      setShowCaptcha(true);
+    }
+  }, [])
+  
   return (
     <>
-      <h2 className="head-text">Vous pouvez <span>me contacter ici</span></h2>
-
+      <h2 style={{ padding: "3rem 0" }}  className="head-text">Vous pouvez <span>me contacter ici</span></h2>
       <div className="app__footer-cards">
         <div className="app__footer-card ">
           <img src={images.email} alt="email" />
@@ -68,7 +74,7 @@ const Footer = () => {
         </div>
       </div>
       {!isFormSubmitted ? (
-        <htmlForm method="post" onSubmit={handleSubmit} data-netlify="true" data-netlify-recaptcha="true" netlify-honeypot="bot-field" name="contact-form" id="contact-form" className="app__footer-form app__flex">
+        <form method="post" onSubmit={handleSubmit} data-netlify="true" data-netlify-recaptcha="true" netlify-honeypot="bot-field" name="contact-form" id="contact-form" className="app__footer-form app__flex">
           <input type="hidden" name="form-name" value="contact-form" />
           <p hidden>
             <label htmlFor="bot-field">
@@ -107,18 +113,22 @@ const Footer = () => {
               />
             </label>
           </div>
-          <section className="app__flex">
+          <label className="app__flex">
             <input type="checkbox" required /><small>J'ai lu et je suis d'accord avec la politique de confidentialité et les mentions légales de ce site.</small>
-          </section>
-          <Recaptcha
-            ref={recaptchaRef}
-            sitekey={RECAPTCHA_KEY}
-            size="normal"
-            id="recaptcha-google"
-            onChange={() => setDisabled(false)}
-          />
+          </label>
+          {
+            showCaptcha && (
+              <Recaptcha
+                ref={recaptchaRef}
+                sitekey={RECAPTCHA_KEY}
+                size="normal"
+                id="recaptcha-google"
+                onChange={() => setDisabled(false)}
+              />
+            )
+          }
           <button type="submit" disabled={disabled} className={disabled ? "button disable" : "button"}>{loading && recaptchaRef.current !== null ? 'Envoi...' : 'Envoyer'}</button>
-        </htmlForm>
+        </form>
       ) : (
         <div>
           <h3 className="response">

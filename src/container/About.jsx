@@ -15,10 +15,9 @@ const About = () => {
 
   return (
     <>
-      <h2 className='head-text'>
+      <h2 style={{ padding: "2rem 0 0" }}  className='head-text'>
         Mes <span>Services</span>
       </h2>
-
       <div className="app__profiles">
         {
           services?.map((service, index) => (

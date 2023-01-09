@@ -13,7 +13,7 @@ const Experiences = () => {
 
   return (
     <>
-        <h2 style={{ padding: "2rem" }} className='head-text'>
+        <h2 style={{ padding: "3rem 0" }} className='head-text'>
             Mes<span> Expériences</span>
         </h2>
         <div className="app__skills-exp">

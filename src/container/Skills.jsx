@@ -20,7 +20,7 @@ const Skills = () => {
     <>
       <h2 className="head-text">Mes<span> Compétences</span></h2>
       <div  className="app__skills-container">
-      <a href={cvpdf.publicURL} className="button" download="cv-boulakhlas-kais.pdf">{name} <FaDownload/></a>
+      <a href={cvpdf.publicURL} className="button dark" download="cv-boulakhlas-kais.pdf">{name} <FaDownload/></a>
       <motion.div className="app__skills-list">
           {
             competences?.map((competence) => (

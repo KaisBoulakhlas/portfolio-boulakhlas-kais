@@ -40,7 +40,7 @@ const Navbar = () => {
                 }
             </ul>
 
-            <button className="app__navbar-menu app__flex" onClick={handleClick}>
+            <button aria-label="fermer" className="app__navbar-menu app__flex" onClick={handleClick}>
                     <span className={ toggle ? "app__navbar-icon app__flex rotated" : "app__navbar-icon app__flex"} />
             </button>
             <div

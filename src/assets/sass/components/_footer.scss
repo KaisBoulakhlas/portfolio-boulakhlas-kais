@@ -23,13 +23,11 @@
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-
     margin: 1rem 0;
     padding: 1rem;
     border-radius: 10px;
     cursor: pointer;
     background-color: #fef4f5;
-
     transition: all 0.3s ease-in-out;
 
     @include for-big-desktop-up {
@@ -114,7 +112,7 @@
     }
   }
 
-  section {
+  label {
     gap: 20px;
     margin-right: auto;
 
@@ -126,7 +124,7 @@
   }
 
   @include for-tablet-up(max-width) {
-    section {
+    label {
       flex-direction: column;
       margin: auto;
       text-align: center;

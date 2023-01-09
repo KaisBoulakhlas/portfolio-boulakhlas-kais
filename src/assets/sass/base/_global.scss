@@ -80,6 +80,11 @@ html::-webkit-scrollbar-thumb
   transition: all .5s ease;
   z-index:2;
   
+  &.dark {
+    border: 2px solid black;
+    color:black;
+  }
+
   @include for-big-desktop-up {
       font-size:1.5rem;
   }
@@ -93,18 +98,18 @@ html::-webkit-scrollbar-thumb
   }
 
   &::before {
-      background-color: $secondary-color;
-      border-top: 2px solid $secondary-color;
-      border-left: 2px solid $secondary-color;
-      border-bottom: 2px solid $secondary-color;
-      position: absolute;
-      content: "";
-      width: 0;
-      height: calc(100% - 2px);
-      top: -1px;
-      left: -1px;
-      transition: all .5s ease;
-      z-index:-1;
+    background-color: $secondary-color;
+    border-top: 2px solid $secondary-color;
+    border-left: 2px solid $secondary-color;
+    border-bottom: 2px solid $secondary-color;
+    position: absolute;
+    content: "";
+    width: 0;
+    height: calc(100% - 2px);
+    top: -1px;
+    left: -1px;
+    transition: all .5s ease;
+    z-index:-1;
   }
 
   &::after {
@@ -120,6 +125,38 @@ html::-webkit-scrollbar-thumb
       border-right: 3px solid $secondary-color;
       border-bottom: 2px solid $secondary-color;
       z-index:-1;
+  }
+
+  &.dark {
+    &::before {
+      background-color: black;
+      border-top: 2px solid black;
+      border-left: 2px solid black;
+      border-bottom: 2px solid black;
+      position: absolute;
+      content: "";
+      width: 0;
+      height: calc(100% - 2px);
+      top: -1px;
+      left: -1px;
+      transition: all .5s ease;
+      z-index:-1;
+    }
+
+    &::after {
+      position: absolute;
+      content: "";
+      width: 0;
+      height: calc(100% - 2px);
+      top: -1px;
+      right: -1px;
+      transition: all .5s ease;    
+      background-color: black;
+      border-top: 2px solid black;
+      border-right: 3px solid black;
+      border-bottom: 2px solid black;
+      z-index:-1;
+    }
   }
 }
 .copyright {
@@ -145,7 +182,6 @@ html::-webkit-scrollbar-thumb
   text-align: center;
   font-weight:700;
   color: $black-color;
-  margin-top:4rem;
   text-transform: capitalize;
 
   span {
@@ -165,7 +201,7 @@ html::-webkit-scrollbar-thumb
 .p-text {
   font-size: 0.8rem;
   text-align: left;
-  color: $gray-color;
+  color:#4B4F58;
   line-height: 1.5;
 
   @include for-big-desktop-up {

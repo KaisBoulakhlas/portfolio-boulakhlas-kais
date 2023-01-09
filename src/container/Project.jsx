@@ -34,8 +34,8 @@ const Project = () => {
   }, [projectsData]);
 
   return (
-      <div>
-        <h2  style={{ padding: "2rem 0" }} className='head-text'>
+      <>
+        <h2 style={{ padding: "3rem 0" }} className='head-text'>
           Mes différents<span> Projets</span>
         </h2>
   
@@ -113,7 +113,7 @@ const Project = () => {
             ))
           }
         </motion.div>
-      </div>     
+      </>     
   )
 }
 

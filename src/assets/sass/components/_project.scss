@@ -36,7 +36,7 @@
       margin: 0.5rem;
   
       &:hover {
-        background-color: $secondary-color;
+        background-color: black;
         color: $white-color;
       }
 
@@ -47,7 +47,7 @@
     }
   
     .item-active {
-      background-color: $secondary-color;
+      background-color: black;
       color: $white-color;
     }
   }
