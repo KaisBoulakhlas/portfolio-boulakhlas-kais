@@ -58,11 +58,11 @@ const Footer = () => {
       <h2 style={{ padding: "3rem 0" }}  className="head-text">Vous pouvez <span className="text-secondary-color">me contacter ici</span></h2>
       <div className="app__footer-cards">
         <div className="app__footer-card ">
-          <img src={images.email} alt="email" />
+          <img loading="lazy" src={images.email} alt="email" />
           <a href="mailto:kaisboulakhlas9@gmail.com" className="p-text">kaisboulakhlas9@gmail.com</a>
         </div>
         <div className="app__footer-card">
-          <img src={images.mobile} alt="phone" />
+          <img loading="lazy" src={images.mobile} alt="phone" />
           <a href="tel:+33618615128" className="p-text">06 18 61 51 28</a>
         </div>
       </div>

@@ -1,4 +1,5 @@
 const React = require("react")
+const  {RootElement}  = require("./src/components")
 
 const HeadComponents = [
   <link
@@ -31,3 +32,7 @@ exports.onRenderBody = ({ setHeadComponents, setHtmlAttributes }) => {
     setHtmlAttributes({ lang: "fr" })
     setHeadComponents(HeadComponents)
 }
+
+exports.wrapRootElement  = ({ element }) => {
+  return <RootElement>{element}</RootElement>;
+};

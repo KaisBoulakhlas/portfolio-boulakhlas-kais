@@ -36,7 +36,7 @@ const Skills = () => {
                   className="app__skills-content app__flex"
                   style={{ backgroundColor: competence.frontmatter.bgcolor }}
                 >
-                  <GatsbyImage image={getImage(competence.frontmatter.icon.childImageSharp.gatsbyImageData)} alt={competence.frontmatter.name} />
+                  <GatsbyImage loading="lazy" image={getImage(competence.frontmatter.icon.childImageSharp.gatsbyImageData)} alt={competence.frontmatter.name} />
                 </div>
                 <p className="p-text">{competence.frontmatter.name}</p>
               </motion.div>

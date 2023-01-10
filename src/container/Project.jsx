@@ -64,7 +64,7 @@ const Project = () => {
                 <div
                   className="app__project-img app__flex"
                 >
-                  <GatsbyImage style={{ height: "100%" }} image={getImage(project.frontmatter.projectimage.childImageSharp.gatsbyImageData)} alt={project.frontmatter.title} />
+                  <GatsbyImage loading="lazy" style={{ height: "100%" }} image={getImage(project.frontmatter.projectimage.childImageSharp.gatsbyImageData)} alt={project.frontmatter.title} />
                   <motion.div
                     whileHover={{ opacity: [0, 1] }}
                     transition={{ duration: 0.25, ease: 'easeInOut', staggerChildren: 0.5 }}

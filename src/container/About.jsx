@@ -28,7 +28,7 @@ const About = () => {
               className="app__profile-item"
               key={service.frontmatter.titre + index}
             >
-              <GatsbyImage image={getImage(service.frontmatter.serviceimage.childImageSharp.gatsbyImageData)} alt={service.frontmatter.titre}/>
+              <GatsbyImage loading="lazy" image={getImage(service.frontmatter.serviceimage.childImageSharp.gatsbyImageData)} alt={service.frontmatter.titre}/>
               <h2 className="bold-text" style={{ marginTop: 20 }}>{service.frontmatter.titre}</h2>
               <p className="p-text" style={{ marginTop: 10 }}>{service.frontmatter.description}</p>
             </motion.div>
