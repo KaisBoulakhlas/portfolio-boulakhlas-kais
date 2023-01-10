@@ -79,14 +79,14 @@ html::-webkit-scrollbar-thumb
   pointer-events: auto;
   transition: all .5s ease;
   z-index:2;
-  
+
+  @include for-big-desktop-up {
+    font-size:1.5rem;
+  }
+
   &.dark {
     border: 2px solid black;
     color:black;
-  }
-
-  @include for-big-desktop-up {
-      font-size:1.5rem;
   }
 
   &:not(.disable):hover {
@@ -184,10 +184,6 @@ html::-webkit-scrollbar-thumb
   color: $black-color;
   text-transform: capitalize;
 
-  span {
-    color: $secondary-color;
-  }
-
   @include for-big-desktop-up {
     font-size: 4rem;
   }
@@ -198,20 +194,24 @@ html::-webkit-scrollbar-thumb
   
 }
 
+.text-secondary-color {
+  color:$secondary-color;
+}
+
 .p-text {
   font-size: 0.8rem;
   text-align: left;
   color:#4B4F58;
   line-height: 1.5;
 
+  &.center {
+    text-align: center;
+  }
+
   @include for-big-desktop-up {
     font-size: 1.75rem;
   }
 
-}
-
-.app__project-item .p-text {
-  text-align:center;
 }
 
 .bold-text {

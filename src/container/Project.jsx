@@ -1,5 +1,6 @@
 import React from 'react'
-import { AiFillEye, AiFillGithub } from 'react-icons/ai'
+import { FaGithub } from '@react-icons/all-files/fa/FaGithub';
+import { FaEye } from '@react-icons/all-files/fa/FaEye';
 import { motion } from 'framer-motion'
 import { AppWrap, MotionWrap } from '../wrapper'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
@@ -36,7 +37,7 @@ const Project = () => {
   return (
       <>
         <h2 style={{ padding: "3rem 0" }} className='head-text'>
-          Mes différents<span> Projets</span>
+          Mes différents<span className="text-secondary-color"> Projets</span>
         </h2>
   
         <div className="app__project-filter">
@@ -78,7 +79,7 @@ const Project = () => {
                             transition={{ duration: 0.25 }}
                             className="app__flex"
                           >
-                            <AiFillEye />
+                            <FaEye />
                           </motion.div>
                         </a>
                       )
@@ -93,7 +94,7 @@ const Project = () => {
                             transition={{ duration: 0.25 }}
                             className="app__flex"
                           >
-                            <AiFillGithub />
+                            <FaGithub />
                           </motion.div>
                         </a>
                       )
@@ -103,10 +104,10 @@ const Project = () => {
 
                 <div className="app__project-content app__flex">
                   <span className="bold-text">{project.frontmatter.title}</span>
-                  <p className="p-text" style={{ marginTop: 10 }}>{project.frontmatter.description}</p>
+                  <p className="p-text center" style={{ marginTop: 10 }}>{project.frontmatter.description}</p>
 
                   <div className="app__project-tag app__flex">
-                    <p className="p-text" style={{ textAlign: 'center', color: "#f68338" }}>#{project.frontmatter.tags.join(' #')}</p>
+                    <p className="p-text center secondary-color">#{project.frontmatter.tags.join(' #')}</p>
                   </div>
                 </div>
               </div>

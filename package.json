@@ -15,6 +15,7 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
+    "@react-icons/all-files": "^4.1.0",
     "framer-motion": "^7.6.9",
     "gatsby": "^5.0.0",
     "gatsby-plugin-gdpr-cookies": "^2.0.9",
@@ -38,7 +39,6 @@
     "react-cookie-consent": "^8.0.1",
     "react-dom": "^18.2.0",
     "react-google-recaptcha": "^2.1.0",
-    "react-icons": "^4.7.1",
     "react-scroll": "^1.8.8",
     "react-simple-typewriter": "^5.0.1",
     "sass": "^1.56.1"
@@ -54,5 +54,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.30"
   }
 }

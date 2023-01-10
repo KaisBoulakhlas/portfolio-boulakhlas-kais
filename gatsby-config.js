@@ -23,7 +23,8 @@ module.exports = {
     image: `src/assets/images/favicon.png`
   },
   flags: {
-    DEV_SSR: true
+    DEV_SSR: true,
+    PARALLEL_SOURCING: true
   },
   plugins: [
     "gatsby-plugin-netlify-cms", 
@@ -132,7 +133,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-zopfli',
       options: {
-        extensions: ['css', 'html', 'js', 'svg']
+        extensions: ['scss','css', 'html', 'js', 'svg','webp', 'png']
       }
     },
     {
@@ -153,6 +154,12 @@ module.exports = {
         environments: ['production']
       },
     },
+    // {
+    //   resolve: "gatsby-plugin-webpack-bundle-analyser-v2",
+    //   options: {
+    //     devMode: true,
+    //   },
+    // },
     'gatsby-plugin-offline', 
     'gatsby-plugin-netlify'
   ],

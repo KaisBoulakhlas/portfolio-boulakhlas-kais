@@ -16,7 +16,7 @@ const About = () => {
   return (
     <>
       <h2 style={{ padding: "2rem 0 0" }}  className='head-text'>
-        Mes <span>Services</span>
+        Mes <span className="text-secondary-color">Services</span>
       </h2>
       <div className="app__profiles">
         {

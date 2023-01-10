@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import { AppWrap, MotionWrap } from '../wrapper';
 import { useCvData } from '../hooks/use-file';
-import { FaDownload } from 'react-icons/fa';
+import { FaDownload } from "@react-icons/all-files/fa/FaDownload";
 
 const Skills = () => {
   const { name, cvpdf } = useCvData();
@@ -18,7 +18,9 @@ const Skills = () => {
 
   return (
     <>
-      <h2 className="head-text">Mes<span> Compétences</span></h2>
+      <h2 className="head-text">
+        Mes<span className="text-secondary-color"> Compétences</span>
+      </h2>
       <div  className="app__skills-container">
       <a href={cvpdf.publicURL} className="button dark" download="cv-boulakhlas-kais.pdf">{name} <FaDownload/></a>
       <motion.div className="app__skills-list">

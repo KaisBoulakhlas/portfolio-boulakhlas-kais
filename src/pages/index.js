@@ -1,21 +1,32 @@
 import * as React from "react"
 import { Navbar } from "../components"
-import { About, Footer, Skills, Header, Project, Experiences, MiniFooter } from '../container'
 import { Seo } from "../components/Seo"
 import Layout from "../components/Layout"
+import { Suspense } from "react"
+
+const Header = React.lazy(() => import("../container/Header"));
+const About = React.lazy(() => import("../container/About"));
+const Experiences = React.lazy(() => import("../container/Experiences"));
+const Skills = React.lazy(() => import("../container/Skills"));
+const Project = React.lazy(() => import("../container/Project"));
+const Footer = React.lazy(() => import("../container/Footer"));
+const MiniFooter = React.lazy(() => import("../container/MiniFooter"));
+
 
 const IndexPage = () => {
   return (
       <Layout>
         <div className="app">
           <Navbar />
-          <Header />
-          <About />
-          <Experiences />
-          <Skills />
-          <Project />
-          <Footer />
-          <MiniFooter />
+          <Suspense fallback="Chargement...">
+            <Header />
+            <About />
+            <Experiences />
+            <Skills />
+            <Project />
+            <Footer />
+            <MiniFooter />
+          </Suspense>
         </div>
       </Layout>
   )

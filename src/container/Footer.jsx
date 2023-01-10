@@ -55,7 +55,7 @@ const Footer = () => {
 
   return (
     <>
-      <h2 style={{ padding: "3rem 0" }}  className="head-text">Vous pouvez <span>me contacter ici</span></h2>
+      <h2 style={{ padding: "3rem 0" }}  className="head-text">Vous pouvez <span className="text-secondary-color">me contacter ici</span></h2>
       <div className="app__footer-cards">
         <div className="app__footer-card ">
           <img src={images.email} alt="email" />
