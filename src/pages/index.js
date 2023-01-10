@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Navbar } from "../components"
+import { Navbar, Spinner } from "../components"
 import { Seo } from "../components/Seo"
 import Layout from "../components/Layout"
 import { Suspense } from "react"
@@ -18,7 +18,7 @@ const IndexPage = () => {
       <Layout>
         <div className="app">
           <Navbar />
-          <Suspense fallback="Chargement...">
+          <Suspense fallback={<Spinner />}>
             <Header />
             <About />
             <Experiences />
