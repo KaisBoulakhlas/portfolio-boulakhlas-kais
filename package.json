@@ -26,6 +26,7 @@
     "gatsby-plugin-netlify-cms": "^7.0.0",
     "gatsby-plugin-offline": "^6.0.0",
     "gatsby-plugin-preconnect": "^1.4.0",
+    "gatsby-plugin-purgecss": "^6.2.1",
     "gatsby-plugin-robots-txt": "^1.8.0",
     "gatsby-plugin-sass": "^6.0.0",
     "gatsby-plugin-sharp": "^5.0.0",
