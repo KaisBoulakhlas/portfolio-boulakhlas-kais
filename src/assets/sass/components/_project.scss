@@ -146,10 +146,13 @@
     width: 100%;
     position: relative;
     flex-direction: column;
+    justify-content: flex-start;
+    min-height: 150px;
   
     span {
       margin-top: 1rem;
       line-height: 1.5;
+      text-align: center;
 
       @include for-big-desktop-up {
         margin-top: 4.5rem;
