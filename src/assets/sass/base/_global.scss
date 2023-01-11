@@ -395,3 +395,11 @@ input[type="checkbox"] {
     }
   }
 }
+
+.page-not-found {
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}

@@ -4,8 +4,8 @@ import { Seo } from "../components/Seo"
 
 const NotFoundPage = () => {
   return (
-    <main className="app__flex" style={{ flexDirection:'column',gap:'20px' }}>
-      <h1 className="head-text">Page <span>introuvable!</span></h1>
+    <main className="app__flex page-not-found">
+      <h1 className="head-text">Page <span className="text-secondary-color">introuvable!</span></h1>
         <Link to="/" className="button">Retour</Link>.
     </main>
   )

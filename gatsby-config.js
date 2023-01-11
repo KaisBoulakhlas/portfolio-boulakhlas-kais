@@ -21,11 +21,12 @@ module.exports = {
     keywords: `kaïs boulakhlas, développeur web, portfolio, projets, expériences, compétences, services`,
     siteUrl: siteUrl,
     image: `src/assets/images/favicon.png`,
-    partytownProxiedURLs: [`https://www.googletagmanager.com/gtag/js?id=${process.env.GA_ID}`]
   },
+  partytownProxiedURLs: [
+    `https://www.googletagmanager.com/gtag/js?id=${process.env.GA_ID}`
+  ],
   flags: {
-    DEV_SSR: true,
-    PARALLEL_SOURCING: true
+    DEV_SSR: true
   },
   plugins: [
     "gatsby-plugin-netlify-cms", 
@@ -84,17 +85,6 @@ module.exports = {
         path: `${__dirname}/content/cv`
       },
     },
-    // {
-    //   resolve: `gatsby-plugin-google-gtag`,
-    //   options: {
-    //     trackingIds: [
-    //       `${process.env.GA_ID}`
-    //     ],
-    //     pluginConfig: {
-    //       head: true,
-    //     },
-    //   },
-    // },
     `gatsby-plugin-sitemap`,
     {
       resolve: 'gatsby-plugin-robots-txt',
@@ -155,12 +145,6 @@ module.exports = {
         environments: ['production']
       },
     },
-    // {
-    //   resolve: "gatsby-plugin-webpack-bundle-analyser-v2",
-    //   options: {
-    //     devMode: true,
-    //   },
-    // },
     'gatsby-plugin-offline', 
     'gatsby-plugin-netlify'
   ],

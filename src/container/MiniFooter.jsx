@@ -2,6 +2,7 @@ import React from 'react'
 import { FaFacebookF } from "@react-icons/all-files/fa/FaFacebookF";
 import { FaGithub } from '@react-icons/all-files/fa/FaGithub';
 import { FaLinkedin } from '@react-icons/all-files/fa/FaLinkedin';
+import { Link } from 'gatsby';
 
 const MiniFooter = () => {
     return (
@@ -19,12 +20,12 @@ const MiniFooter = () => {
                     </a>
                 </div>
                 <div className="footer__rights">
-                    <a href="https://github.com/KaisBoulakhlas" title="Mentions légales" target="_blank" rel="noreferrer">
+                    <Link to="/mentions-legales" title="Mentions légales">
                         Mentions Légales
-                    </a>
-                    <a href="https://fr-fr.facebook.com/kais.boulakhlas" title="Politique de confidentialité" target="_blank" rel="noreferrer">
+                    </Link>
+                    <Link to="/politique-de-confidentialite" title="Politique de confidentialité">
                         Politique de confidentialité
-                    </a>
+                    </Link>
                 </div>
             </div>
         </footer>

@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Recaptcha from 'react-google-recaptcha';
 import { images } from '../constants';
+import useOnScreen from '../hooks/use-screen';
 import { AppWrap, MotionWrap } from '../wrapper';
 
 const RECAPTCHA_KEY = process.env.GATSBY_APP_SITE_RECAPTCHA_KEY;
@@ -14,10 +15,13 @@ function encode(data) {
 const Footer = () => {
   const [formData, setFormData] = useState({ username: '', email: '', message: '' });
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
+  const [showCaptcha, setShowCaptcha] = useState(false);
   const [loading, setLoading] = useState(false);
   const [errorCaptcha, setErrorCaptcha] = useState(false);
   const [disabled, setDisabled] = useState(true);
   const recaptchaRef = React.createRef();
+  const refFooter = useRef(null);
+  const isOnCaptcha = useOnScreen(refFooter);
 
   const { username, email, message } = formData;
 
@@ -53,9 +57,15 @@ const Footer = () => {
       .catch((error) => alert(error))
   };
 
+  useEffect(() => {
+    if(isOnCaptcha) {
+        setShowCaptcha(true);
+    }
+  }, [isOnCaptcha, setShowCaptcha])
+
   return (
     <>
-      <h2 style={{ padding: "3rem 0" }}  className="head-text">Vous pouvez <span className="text-secondary-color">me contacter ici</span></h2>
+      <h2 style={{ padding: "3rem 0" }} ref={refFooter} className="head-text">Vous pouvez <span className="text-secondary-color">me contacter ici</span></h2>
       <div className="app__footer-cards">
         <div className="app__footer-card ">
           <img loading="lazy" src={images.email} alt="email" />
@@ -109,13 +119,17 @@ const Footer = () => {
           <label className="app__flex">
             <input type="checkbox" required /><small>J'ai lu et je suis d'accord avec la politique de confidentialité et les mentions légales de ce site.</small>
           </label>
-          <Recaptcha
-            ref={recaptchaRef}
-            sitekey={RECAPTCHA_KEY}
-            size="normal"
-            id="recaptcha-google"
-            onChange={() => setDisabled(false)}
-          />
+          {
+            showCaptcha && (
+              <Recaptcha
+                ref={recaptchaRef}
+                sitekey={RECAPTCHA_KEY}
+                size="normal"
+                id="recaptcha-google"
+                onChange={() => setDisabled(false)}
+              />
+            )
+          }
           <button type="submit" disabled={disabled} className={disabled ? "button disable" : "button"}>{loading && recaptchaRef.current !== null ? 'Envoi...' : 'Envoyer'}</button>
         </form>
       ) : (

@@ -3,7 +3,7 @@ import { Seo } from "../components/Seo"
 
 const MentionsLegales = () => {
   return (
-    <h1 className="head-text">Mentions <span>légales</span></h1>
+    <h1 className="head-text">Mentions <span className="text-secondary-color">légales</span></h1>
   )
 }
 

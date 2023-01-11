@@ -3,7 +3,7 @@ import { Seo } from "../components/Seo"
 
 const PolitiqueConfidentialite = () => {
   return (
-    <h1 className="head-text">Politique de <span>confidentialité</span></h1>
+    <h1 className="head-text">Politique de <span className="text-secondary-color">confidentialité</span></h1>
   )
 }
 
