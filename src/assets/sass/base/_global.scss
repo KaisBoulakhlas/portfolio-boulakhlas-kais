@@ -29,6 +29,16 @@ html::-webkit-scrollbar-thumb
 
 .app {
   background-color: $primary-color;
+
+  &__flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    &--column {
+      flex-direction: column;
+    }
+  }
 }
 
 .app__whitebg {
@@ -47,15 +57,15 @@ html::-webkit-scrollbar-thumb
   flex-direction: row;
 }
 
-.app__flex {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+// .app__flex {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
 
-  &--column {
-    flex-direction: column;
-  }
-}
+//   &.--column {
+//     flex-direction: column;
+//   }
+// }
 
 .app__wrapper {
   flex: 1;
