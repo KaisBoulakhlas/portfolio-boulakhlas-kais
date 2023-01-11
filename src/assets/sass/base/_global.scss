@@ -51,6 +51,10 @@ html::-webkit-scrollbar-thumb
   display: flex;
   justify-content: center;
   align-items: center;
+
+  &--column {
+    flex-direction: column;
+  }
 }
 
 .app__wrapper {
@@ -396,10 +400,10 @@ input[type="checkbox"] {
   }
 }
 
-.page-not-found {
-  flex-direction: column;
-  gap: 20px;
-  justify-content: center;
-  align-items: center;
+.gap-20 {
+  gap:20px;
+}
+
+.full-height {
   height: 100vh;
 }
