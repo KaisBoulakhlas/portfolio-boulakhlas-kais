@@ -1,9 +1,10 @@
 import * as React from "react"
-import { Navbar, Spinner } from "../components"
+import { Spinner } from "../components"
 import { Seo } from "../components/Seo"
 import Layout from "../components/Layout"
 import { Suspense } from "react"
 
+const Navbar = React.lazy(() => import("../components/Navbar"));
 const Header = React.lazy(() => import("../container/Header"));
 const About = React.lazy(() => import("../container/About"));
 const Experiences = React.lazy(() => import("../container/Experiences"));
@@ -17,8 +18,8 @@ const IndexPage = () => {
   return (
       <Layout>
         <div className="app">
-          <Navbar />
           <Suspense fallback={<Spinner />}>
+            <Navbar />
             <Header />
             <About />
             <Experiences />
