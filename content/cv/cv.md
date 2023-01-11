@@ -1,5 +1,5 @@
 ---
 name: Mon CV
-cvpdf: ../../static/img/hammer-renovations-site-vitrine.pdf
+cvpdf: ../../static/img/cv-boulakhlas-kais.pdf
 typeoffile: cv
 ---
