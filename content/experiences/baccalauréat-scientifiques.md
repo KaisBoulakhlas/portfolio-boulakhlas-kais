@@ -1,6 +1,6 @@
 ---
 id: 1
-title: Baccalauréat Scientifiques
+title: Bac Scientifique Option ISN
 tag: Diplôme
 startdate: "2017"
 enddate: "null"
