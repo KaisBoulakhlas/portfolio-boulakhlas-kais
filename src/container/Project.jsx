@@ -13,7 +13,7 @@ const Project = () => {
   const [activeFilter, setActiveFilter] = useState('Tous');
   const [filterProject, setFilterProject] = useState([]);
   const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
-  const types = ['Tous', 'UI/UX', 'Web', 'Mobile'];
+  const types = ['Tous', 'UI/UX', 'Web'];
 
   const handleprojectFilter = (item) => {
     setActiveFilter(item);
