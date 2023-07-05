@@ -1,5 +1,5 @@
 ---
 name: Mon CV
-cvpdf: ../../static/img/cv-boulakhlas-kaïs.pdf
+cvpdf: ../../static/img/cv-boulakhlas-kais.pdf
 typeoffile: cv
 ---
