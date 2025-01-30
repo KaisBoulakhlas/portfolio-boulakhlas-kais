@@ -1,5 +1,5 @@
 ---
 name: Mon CV
-cvpdf: ../../static/img/cv-dev-fullstack-kais.pdf
+cvpdf: ../../static/img/cv_ingenieur_fullstack.pdf
 typeoffile: cv
 ---
