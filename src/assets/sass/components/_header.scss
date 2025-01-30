@@ -1,0 +1,114 @@
+.app__hero {
+    background:#0c0c0c;
+    display:flex;
+    justify-content: center;
+    height:100%;
+    padding:0 1rem;
+    position:relative;
+    width:100%;
+    color: #000;
+    z-index:1;
+
+    @include for-phone-only {
+        position:static;
+        padding:0;
+        margin-top:-8rem;
+    }
+
+
+    &::before{
+        content:"";
+        position:absolute;
+        top: 0;
+        bottom: 0;
+        right:0;
+        left:0;
+        z-index:2;
+        background:linear-gradient(180deg, rgba(0, 0, 0, 0), rgb(0, 0, 0)), linear-gradient(180deg, rgba(0, 0, 0, 0.2), transparent);
+    }
+
+    .app__hero-background {
+        position:absolute;
+        top:0;
+        bottom:0;
+        right:0;
+        left:0;
+        width:100%;
+        height: 100%;
+        overflow:hidden;
+
+        .app__hero-video{
+            width:100%;
+            height:100%;
+            object-fit: cover;
+        }
+    }
+
+    .app__hero-content{
+        z-index:3;
+        height:calc(100vh - 80px);
+        pointer-events: none;
+        max-height:100%;
+        padding: 0rem calc((100vw - 1300px) / 2);
+    }
+
+    .app__hero-items {
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items:flex-start;
+        letter-spacing: 1px;
+        text-align:center;
+        height:100vh;
+        padding:0;
+        max-height:100%;
+        color: $white-color;
+        line-height:1.5;
+
+        @include for-phone-only {
+            align-items:center;
+        }
+
+        .app__hero-title {
+            font-weight:bold;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size:3.3rem;
+            text-align: center;
+            margin-bottom:1.5rem;
+
+            @include for-big-desktop-up {
+                font-size:4rem;
+            }
+
+            @include for-tablet-up(max-width) {
+                font-size:2.5rem;
+            }
+
+            @include for-phone-only {
+                font-size:1.7rem;
+            }
+        }
+        
+        .app__hero-paragraph{
+            margin-bottom:2.75rem;
+            font-weight: 100;
+            font-size:1.1rem;
+
+            @include for-tablet-up(min-width) {
+                margin-bottom:2rem;
+            }
+            @include for-tablet-up(max-width) {
+                font-size:0.9rem;
+            }
+
+            @include for-big-desktop-up {
+                font-size:1.25rem;
+            }
+
+            @include for-phone-only {
+                font-size:0.6rem;
+            }
+        }
+    }
+}
