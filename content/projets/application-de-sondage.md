@@ -10,6 +10,7 @@ typeoffile: projet
 type:
   - Web
   - Tous
+  - Zboubi
 tags:
   - vue
   - laravel
